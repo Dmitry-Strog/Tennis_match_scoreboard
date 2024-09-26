@@ -17,16 +17,12 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create_table.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/migrations/versions/5bbb69910f8d_migration1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/pages/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/match_dao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/player_dao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/handlers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/handlers/new_match_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/new_match_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/pages/match-score.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -40,6 +36,9 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +48,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {

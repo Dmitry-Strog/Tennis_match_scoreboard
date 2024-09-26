@@ -1,24 +1,43 @@
+from waitress import serve
+from urllib.parse import parse_qs
 
-def app(environ, start_response):
-    request_uri = environ.get('REQUEST_URI')
+from src.handlers.new_match_handler import NewMatchHandler
 
-    if request_uri == "/new-match":
-        status = "200 OK"
-        headers = [('Content-type', 'text/html; charset=utf-8')]
-        start_response(status, headers)
-        with open("src/views/pages/index.html", "rb") as file:
-            return [file.read()]
 
-    elif request_uri.startswith("/static/"):
-        # Обработка запросов к статическим файлам
-        status = "200 OK"
-        content_type = [('Content-type', 'text/css; charset=utf-8')]
-        start_response(status, content_type)
-        with open("src/views/static/css/styles.css", "rb") as file:
-            return [file.read()]
+class MainServer:
+    def app(self, environ, start_response):
+        request_uri = environ.get('REQUEST_URI')
+        request_method = environ.get('REQUEST_METHOD')
+
+        if request_uri == "/new-match":
+            handler = NewMatchHandler()
+
+            if request_method == 'GET':
+                response = handler.request_get(start_response)
+                return response
+
+            if request_method == 'POST':
+                response = handler.request_post(environ, start_response)
+                return response
+
+        elif request_uri.startswith("/static/css"):
+            # Обработка запросов к статическим файлам
+            # print(environ)
+            status = "200 OK"
+            content_type = [('Content-type', 'text/css; charset=utf-8')]
+            start_response(status, content_type)
+            with open("src/views/static/css/styles.css", "rb") as file:
+                return [file.read()]
+
+    # def add_cors_headers(self, headers):
+    #     """Добавляет заголовки CORS в список заголовков."""
+    #     headers.append(('Access-Control-Allow-Credentials', 'true'))
+    #     headers.append(('Access-Control-Allow-Origin', '*'))
+    #     headers.append(('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'))
+    #     headers.append(('Access-Control-Allow-Headers', 'Content-Type'))
 
 
 if __name__ == '__main__':
-    from waitress import serve
-
-    serve(app, host='127.0.0.1', port='8000')
+    start = MainServer()
+    print("Сервер запущен")
+    serve(start.app, host='127.0.0.1', port='8000')
