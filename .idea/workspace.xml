@@ -17,12 +17,10 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/match_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/player_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/handlers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/handlers/new_match_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/new_match_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/pages/match-score.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/tennis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/tennis_game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/tennis_match.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/tennis_set.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -37,8 +35,7 @@
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/new_match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/new_match_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +82,9 @@
     "Python.main.executor": "Run",
     "Python.models.executor": "Run",
     "Python.orm.executor": "Run",
+    "Python.tennis.executor": "Run",
+    "Python.tennis_game.executor": "Run",
+    "Python.tennis_set.executor": "Run",
     "Python.wsgi.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",

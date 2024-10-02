@@ -18,7 +18,7 @@ class NewMatchService:
 
     def find_or_create_player(self, player: str):
         """ Возвращается игрок если он есть в БД
-        или создает игрока и возвращает"""
+        или создает игрока и возвращает """
         if self.check_player(player):
             return self.player_dao.get_player(player)
         self.player_dao.insert_player(player)
