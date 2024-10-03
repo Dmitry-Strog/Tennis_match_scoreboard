@@ -1,6 +1,6 @@
 class TennisGame:
     SCORE_MAPPING = {
-        0: "0", 1: "15", 2: "30", 3: "40", 4: "Win"
+        0: "0", 1: "15", 2: "30", 3: "40", 4: "AD"
     }
 
     def __init__(self):
@@ -8,6 +8,7 @@ class TennisGame:
         self.player2_point: int = 0
         self.player1_wins: bool = False
         self.player2_wins: bool = False
+        self.deuce = False
 
     def update_point(self, player_1: int, player_2: int):
         if player_1:
@@ -18,10 +19,24 @@ class TennisGame:
             self.check_point()
 
     def check_point(self):
-        if self.player1_point >= 4 and 0 >= self.player2_point <= 2:
+        if self.player1_point == 3 and self.player2_point == 3:
+            self.deuce = True
+        if self.deuce:
+            self.check_deuce()
+        else:
+            if self.player1_point >= 4 and self.player2_point < 3:
+                self.player1_wins = True
+            elif self.player2_point >= 4 and self.player1_point < 3:
+                self.player2_wins = True
+
+    def check_deuce(self):
+        if self.player1_point > 4 and (self.player1_point - self.player2_point) == 2:
             self.player1_wins = True
-        elif self.player2_point >= 4 and 0 >= self.player1_point <= 2:
+        elif self.player2_point > 4 and (self.player2_point - self.player1_point) == 2:
             self.player2_wins = True
+        elif self.player1_point == 4 and self.player2_point == 4:
+            self.player1_point -= 1
+            self.player2_point -= 1
 
     def is_end_game(self):
         if self.player1_wins:
@@ -48,3 +63,4 @@ class TennisGame:
         self.player2_point = 0
         self.player1_wins = False
         self.player2_wins = False
+        self.deuce = False

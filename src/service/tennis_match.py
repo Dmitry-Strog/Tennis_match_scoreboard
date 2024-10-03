@@ -20,9 +20,9 @@ class TennisMatch:
                 self.check_point()
 
     def check_point(self):
-        if self.player1_point > 2 and 0 >= self.player2_point <= 1:
+        if self.player1_point >= 3 and self.player2_point < 3:
             return print("Winner player1")
-        elif self.player2_point > 2 and 0 >= self.player1_point <= 1:
+        elif self.player2_point >= 3 and self.player1_point < 3:
             return print("Winner player2")
 
     def display_score_print(self):

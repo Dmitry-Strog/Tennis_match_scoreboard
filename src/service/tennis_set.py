@@ -14,18 +14,19 @@ class TennisSet:
         if self.game.is_end_game():
             if self.game.get_winner() == "Player1":
                 self.player1_point += 1
-                self.game.reset_points()
+                # self.game.reset_points()
                 self.check_point()
             elif self.game.get_winner() == "Player2":
                 self.player2_point += 1
-                self.game.reset_points()
+                # self.game.reset_points()
                 self.check_point()
+            self.game.reset_points()
 
 
     def check_point(self):
-        if self.player1_point >= 6 and 0 >= self.player2_point <= 4:
+        if self.player1_point >= 6 and self.player2_point < 6:
             self.player1_wins = True
-        elif self.player2_point >= 5 and 0 >= self.player1_point <= 4:
+        elif self.player2_point >= 6 and self.player1_point < 6:
             self.player2_wins = True
 
     def is_end_game(self):
