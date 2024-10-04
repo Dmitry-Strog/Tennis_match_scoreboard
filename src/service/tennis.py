@@ -1,15 +1,19 @@
 from src.service.tennis_game import TennisGame
 from src.service.tennis_match import TennisMatch
 from src.service.tennis_set import TennisSet
+from src.service.tennis_tie_break import TieBreak
 
 
 class Tennis:
     def __init__(self):
         self.game = TennisGame()
-        self.tennis_set = TennisSet(self.game)
+        self.tie_break = TieBreak()
+        self.tennis_set = TennisSet(self.game, self.tie_break)
         self.match = TennisMatch(self.tennis_set)
 
     def tennis_game(self):
+        if self.tennis_set.tie_break_flag:
+            return self.tie_break.display_score_print()
         return self.game.display_score_print()
 
     def tennis_sett(self):
@@ -20,8 +24,11 @@ class Tennis:
 
 
 tennis = Tennis()
-tennis.match.update_point(1, 0)
-tennis.match.update_point(0, 1)
+for _ in range():
+    tennis.match.update_point(1, 0)
+    tennis.match.update_point(1, 0)
+    tennis.match.update_point(0, 1)
+    tennis.match.update_point(0, 1)
 
 
 tennis.tennis_game()
