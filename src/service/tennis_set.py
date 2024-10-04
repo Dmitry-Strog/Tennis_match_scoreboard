@@ -12,27 +12,36 @@ class TennisSet:
         self.player1_wins: bool = False
         self.player2_wins: bool = False
 
-    def update_point(self, player_1: int, player_2: int): # Переделать тестевый вариант
-        obj = self.game
+    def update_point(self, player_1: int, player_2: int):
         if self.tie_break_flag:
-            obj = self.tie_break
-            obj.update_point(player_1, player_2)
-            if obj.is_end_game():
-                if obj.get_winner() == "Player1":
-                    self.player1_wins = True
-                elif obj.get_winner() == "Player2":
-                    self.player2_wins = True
+            self.update_tie_break_point(player_1, player_2)
         else:
-            obj.update_point(player_1, player_2)
-            if obj.is_end_game():
-                if obj.get_winner() == "Player1":
-                    self.player1_point += 1
-                    self.check_point()
-                elif obj.get_winner() == "Player2":
-                    self.player2_point += 1
-                    self.check_point()
-                obj.reset_points()
+            self.update_game_point(player_1, player_2)
 
+    def update_game_point(self, player_1: int, player_2: int):
+        self.game.update_point(player_1, player_2)
+        if self.game.is_end_game():
+            self.add_game_point(self.game.get_winner())
+            self.game.reset_points()
+
+    def update_tie_break_point(self, player_1: int, player_2: int):
+        self.tie_break.update_point(player_1, player_2)
+        if self.tie_break.is_end_game():
+            self.set_tie_break_winner(self.tie_break.get_winner())
+            self.tie_break.reset_points()
+
+    def add_game_point(self, winner: str):
+        if winner == "Player1":
+            self.player1_point += 1
+        elif winner == "Player2":
+            self.player2_point += 1
+        self.check_point()
+
+    def set_tie_break_winner(self, winner: str):
+        if winner == "Player1":
+            self.player1_wins = True
+        elif winner == "Player2":
+            self.player2_wins = True
 
     def check_point(self):
         if self.player1_point >= 6 and (self.player1_point - self.player2_point) == 2:
