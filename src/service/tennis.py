@@ -24,7 +24,7 @@ class Tennis:
 
 
 tennis = Tennis()
-for _ in range(17):
+for _ in range(108):
     tennis.match.update_point(1, 0)
     tennis.match.update_point(1, 0)
     tennis.match.update_point(0, 1)

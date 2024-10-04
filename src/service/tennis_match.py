@@ -10,14 +10,15 @@ class TennisMatch:
     def update_point(self, player_1: int, player_2: int):
         self.tennis_set.update_point(player_1, player_2)
         if self.tennis_set.is_end_game():
-            if self.tennis_set.get_winner() == "Player1":
-                self.player1_point += 1
-                self.tennis_set.reset_points()
-                self.check_point()
-            elif self.tennis_set.get_winner() == "Player2":
-                self.player2_point += 1
-                self.tennis_set.reset_points()
-                self.check_point()
+            self.add_game_point(self.tennis_set.get_winner())
+            self.tennis_set.reset_points()
+
+    def add_game_point(self, winner: str):
+        if winner == "Player1":
+            self.player1_point += 1
+        elif winner == "Player2":
+            self.player2_point += 1
+        self.check_point()
 
     def check_point(self):
         if self.player1_point >= 3 and self.player2_point < 3:

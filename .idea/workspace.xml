@@ -30,9 +30,10 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/tennis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/tennis_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/tennis_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/tennis_match.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_match.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/tennis_tie_break.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_tie_break.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

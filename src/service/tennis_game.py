@@ -13,10 +13,9 @@ class TennisGame:
     def update_point(self, player_1: int, player_2: int):
         if player_1:
             self.player1_point += 1
-            self.check_point()
         elif player_2:
             self.player2_point += 1
-            self.check_point()
+        self.check_point()
 
     def check_point(self):
         if self.player1_point == 3 and self.player2_point == 3:
@@ -24,10 +23,13 @@ class TennisGame:
         if self.deuce:
             self.check_deuce()
         else:
-            if self.player1_point >= 4 and self.player2_point < 3:
-                self.player1_wins = True
-            elif self.player2_point >= 4 and self.player1_point < 3:
-                self.player2_wins = True
+            self.check_game()
+
+    def check_game(self):
+        if self.player1_point >= 4 and self.player2_point < 3:
+            self.player1_wins = True
+        elif self.player2_point >= 4 and self.player1_point < 3:
+            self.player2_wins = True
 
     def check_deuce(self):
         if self.player1_point > 4 and (self.player1_point - self.player2_point) == 2:

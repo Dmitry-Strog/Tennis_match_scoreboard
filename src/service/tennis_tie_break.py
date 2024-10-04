@@ -12,10 +12,9 @@ class TieBreak(TennisGame):
     def update_point(self, player_1: int, player_2: int):
         if player_1:
             self.player1_point += 1
-            self.check_point()
         elif player_2:
             self.player2_point += 1
-            self.check_point()
+        self.check_point()
 
     def check_point(self):
         if self.player1_point >= 7 and (self.player1_point - self.player2_point) == 2:
@@ -26,7 +25,6 @@ class TieBreak(TennisGame):
             self.player1_wins = True
         elif self.player2_point >= 7 and self.player1_point < 6:
             self.player2_wins = True
-
 
     def is_end_game(self):
         if self.player1_wins:
