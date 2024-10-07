@@ -17,6 +17,9 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_tennis_game.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -30,10 +33,8 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/tennis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/tennis_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/tennis_match.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_match.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/tennis_tie_break.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/tennis_tie_break.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +75,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python tests.Python tests for test_main.test_main.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game.executor": "Debug",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40.executor": "Run",
+    "Python tests.Python tests in test_tennis_game.py.executor": "Debug",
     "Python.config.executor": "Run",
     "Python.create_table.executor": "Run",
     "Python.database.executor": "Run",
@@ -96,32 +103,89 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state">
+    <configuration name="Python tests for test_tennis_game.TestTennisGame" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wsgi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_tennis_game.TestTennisGame.test_deuce_state" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Tennis_match_scoreboard" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame.test_deuce_state&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Tennis_match_scoreboard" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame.test_player_wins_game&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_tennis_game.TestTennisGame.test_score_40_40" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Tennis_match_scoreboard" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame.test_score_40_40&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_tennis_game" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Tennis_match_scoreboard" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_tennis_game&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state" />
+        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" />
+        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40" />
+        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame" />
+        <item itemvalue="Python tests.Python tests for tests.test_tennis_game" />
       </list>
     </recent_temporary>
   </component>
@@ -145,5 +209,6 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ini" />
   </component>
 </project>
