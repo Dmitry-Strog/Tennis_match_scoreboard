@@ -7,6 +7,7 @@ class TestTennisGame:
     """
     Тестовый класс для проверки функционала класса TennisGame.
     """
+
     @pytest.mark.parametrize(
         "score_point, res",
         [
@@ -76,6 +77,32 @@ class TestTennisGame:
         TennisScoreUpdater().add_score_players(score_point, tennis)
         assert (tennis.game.SCORE_MAPPING[tennis.game.player1_point]
                 and tennis.game.SCORE_MAPPING[tennis.game.player2_point])
+
+    @pytest.mark.parametrize(
+        "score_point, score_player, player1_point, player2_point, res",
+        [
+            (3, 2, 1, 0, 1),
+            (3, 2, 0, 1, 1),
+        ]
+    )
+    def test_deuce_wins_game(self, score_point: int, score_player: int, player1_point: int,
+                             player2_point: int, res: str, create_match):
+        """
+        Тест проверяет, выигрывает ли игрок игру после состояния "deuce" (40:40) при переходе в "Advantage".
+
+        :param score_point: Количество очков для обоих игроков, чтобы установить состояние "deuce".
+        :param score_player: Очки, которые один из игроков набирает после состояния "deuce".
+        :param player1_point: Начальное количество очков игрока 1 перед добавлением очков.
+        :param player2_point: Начальное количество очков игрока 2 перед добавлением очков.
+        :param res: Ожидаемый результат — победа игрока с состоянием "Advantage" (счёт должен увеличиться на 1).
+        :param create_match: Фикстура для создания матча с начальной установкой игры.
+        """
+        tennis = create_match
+        tennis.game.reset_points()
+        TennisScoreUpdater().add_score_players(score_point, tennis)  # Установка состояния "deuce"
+        TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)  # Добавление очков
+        assert (tennis.tennis_set.player1_point == res
+                or tennis.tennis_set.player2_point == res)
 
     @pytest.mark.parametrize(
         "player1_point, player2_point, score_point, res",
