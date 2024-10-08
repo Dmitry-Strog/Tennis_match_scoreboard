@@ -24,8 +24,11 @@ class Tennis:
 
 
 tennis = Tennis()
-for _ in range(4):
+for _ in range(12):
     tennis.match.update_point(1, 0)
+    tennis.match.update_point(1, 0)
+    tennis.match.update_point(0, 1)
+    tennis.match.update_point(0, 1)
 
 tennis.tennis_game()
 tennis.tennis_sett()
