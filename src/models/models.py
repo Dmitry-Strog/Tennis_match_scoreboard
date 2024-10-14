@@ -28,8 +28,8 @@ class MatchesModel(Base):
     UUID: Mapped[uuid.UUID] = mapped_column(CHAR(36), unique=True, default=lambda: str(uuid.uuid4()))
     player1: Mapped[int] = mapped_column(ForeignKey("players.ID", ondelete="CASCADE"))
     player2: Mapped[int] = mapped_column(ForeignKey("players.ID", ondelete="CASCADE"))
-    winner: Mapped[int] = mapped_column(ForeignKey("players.ID", ondelete="CASCADE"))
-    score: Mapped[int] = mapped_column(String(256))
+    winner: Mapped[int] = mapped_column(ForeignKey("players.ID", ondelete="CASCADE"), nullable=True)
+    score: Mapped[int] = mapped_column(String(256), nullable=True)
 
     player1_rel: Mapped["PlayersModel"] = relationship("PlayersModel", foreign_keys=[player1])
     player2_rel: Mapped["PlayersModel"] = relationship("PlayersModel", foreign_keys=[player2])

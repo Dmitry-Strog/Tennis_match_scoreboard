@@ -1,5 +1,5 @@
 import pytest
-from src.service.tennis import Tennis
+from src.service.match_scoreboard_service.tennis_scoreboard import ScoreboardTennis
 
 
 @pytest.fixture()
@@ -8,7 +8,7 @@ def create_match():
     Фикстура для создания нового матча по теннису.
     :return: Новый экземпляр объекта Tennis.
     """
-    match = Tennis()
+    match = ScoreboardTennis()
     return match
 
 
@@ -17,7 +17,7 @@ class TennisScoreUpdater:
     Вспомогательный класс для обновления очков в матче по теннису.
     """
 
-    def add_score_players(self, point: int, match: Tennis):
+    def add_score_players(self, point: int, match: ScoreboardTennis):
         """
         Добавляет очки обоим игрокам поочередно.
         Этот метод полезен для тестирования сценариев, где оба игрока получают очки попеременно.
@@ -30,7 +30,7 @@ class TennisScoreUpdater:
             tennis.match.update_point(1, 0)
             tennis.match.update_point(0, 1)
 
-    def add_score_set(self, point: int, match: Tennis):
+    def add_score_set(self, point: int, match: ScoreboardTennis):
         """
         Добавляет очки в рамках одного сета для обоих игроков.
 
@@ -44,7 +44,7 @@ class TennisScoreUpdater:
             tennis.match.update_point(0, 1)
             tennis.match.update_point(0, 1)
 
-    def add_score_player(self, player1_point: int, player2_point: int, point: int, match: Tennis):
+    def add_score_player(self, player1_point: int, player2_point: int, point: int, match: ScoreboardTennis):
         """
         Добавляет очки конкретному игроку.
         Полезно для тестирования сценариев, где один получает очки в определённой последовательности.

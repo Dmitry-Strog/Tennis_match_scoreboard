@@ -17,9 +17,19 @@ class NewMatchHandler:
     def request_post(self, environ, start_response):
         content_length = int(environ.get('CONTENT_LENGTH', 0))
         post_data = environ['wsgi.input'].read(content_length).decode('utf-8')
-        self.service.create_match(parse_qs(post_data))
+        player1_name, player2_name = self.parse_url(post_data)
+
+        match_data = self.service.start_match(player1_name, player2_name)
+        print(match_data)
+
         status = "201 CREATED"
         headers = [('Content-type', 'text/html; charset=utf-8')]
         start_response(status, headers)
         with open("src/views/pages/match-score.html", "rb") as file:
             return [file.read()]
+
+    def parse_url(self, post_data):
+        data = parse_qs(post_data)
+        player1 = data["player1"]
+        player2 = data["player2"]
+        return player1, player2
