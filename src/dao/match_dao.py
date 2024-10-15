@@ -1,6 +1,8 @@
 import uuid
 
-from src.models import PlayersModel, MatchesModel, sessions
+from sqlalchemy import update
+
+from src.models import MatchesModel, sessions
 
 
 class MatchDao:
@@ -9,7 +11,6 @@ class MatchDao:
         with sessions() as session:
             session.add(match)
             session.commit()
-            session.refresh(match)
             return match.UUID
 
     def get_match_by_uuid(self, match_uuid: uuid.UUID) -> MatchesModel:
@@ -17,5 +18,8 @@ class MatchDao:
             match = session.query(MatchesModel).filter_by(UUID=str(match_uuid)).first()
             return match
 
-    def update_match(self):
-        pass
+    def update_match(self, uuid_match, score_json):
+        with sessions() as session:
+            match: MatchesModel = session.query(MatchesModel).filter(MatchesModel.UUID == uuid_match).one_or_none()
+            match.score = score_json
+            session.commit()

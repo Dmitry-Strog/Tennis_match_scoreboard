@@ -10,10 +10,10 @@ class MatchService:
         match_uuid = self.match_dao.insert_table_matches(player1.ID, player2.ID)
         return match_uuid
 
-    # def get_match(self, match_uuid):
-    #     pass
+    def update_match_score(self, uuid_match, score_json):
+        self.match_dao.update_match(uuid_match, score_json)
 
-    # def update_match_score(self, player: str):
+    # def get_match(self, match_uuid):
     #     pass
 
     # def is_match(self, name):
