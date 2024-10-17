@@ -34,13 +34,6 @@ class MainServer:
             with open("src/views/static/css/styles.css", "rb") as file:
                 return [file.read()]
 
-    # def add_cors_headers(self, headers):
-    #     """Добавляет заголовки CORS в список заголовков."""
-    #     headers.append(('Access-Control-Allow-Credentials', 'true'))
-    #     headers.append(('Access-Control-Allow-Origin', '*'))
-    #     headers.append(('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'))
-    #     headers.append(('Access-Control-Allow-Headers', 'Content-Type'))
-
 
 if __name__ == '__main__':
     start = MainServer()
