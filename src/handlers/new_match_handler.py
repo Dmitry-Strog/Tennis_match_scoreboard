@@ -1,5 +1,6 @@
 from urllib.parse import parse_qs
 
+from src.service.match_data import MatchData
 from src.service.new_match_service import NewMatchService
 
 
@@ -19,14 +20,12 @@ class NewMatchHandler:
         post_data = environ['wsgi.input'].read(content_length).decode('utf-8')
         player1_name, player2_name = self.parse_url(post_data)
 
-        match_data = self.service.start_match(player1_name, player2_name)
-        print(match_data)
-
-        status = "201 CREATED"
-        headers = [('Content-type', 'text/html; charset=utf-8')]
+        match_data: MatchData = self.service.start_match(player1_name, player2_name)
+        uuid = match_data.uuid
+        status = '303 See Other'
+        headers = [('Location', f'/match-score?uuid={uuid}')]
         start_response(status, headers)
-        with open("src/views/pages/match-score.html", "rb") as file:
-            return [file.read()]
+        return [b'Redirecting...']
 
     def parse_url(self, post_data):
         data = parse_qs(post_data)
