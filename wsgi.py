@@ -1,5 +1,4 @@
 from waitress import serve
-from urllib.parse import parse_qs
 
 from src.handlers.match_score_handler import MatchScoreHandler
 from src.handlers.new_match_handler import NewMatchHandler
@@ -24,6 +23,9 @@ class MainServer:
             handler = MatchScoreHandler()
 
             if request_method == 'GET':
+                response = handler.request_get(environ, start_response)
+                return response
+            if request_method == 'POST':
                 response = handler.request_get(start_response)
                 return response
 

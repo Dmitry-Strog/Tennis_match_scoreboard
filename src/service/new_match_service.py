@@ -11,7 +11,7 @@ class NewMatchService:
         self.match = MatchService()
         self.json_converter = ObjectToJsonDb()
 
-    def start_match(self, name_player1, name_player2, uuid=None):
+    def start_match(self, name_player1, name_player2):
         player1, player2 = self.find_player(name_player1, name_player2)
         uuid = self.find_match(player1, player2)
         scoreboard = ScoreboardTennis(player1.NAME, player2.NAME)

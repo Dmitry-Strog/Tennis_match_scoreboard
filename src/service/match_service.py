@@ -13,9 +13,12 @@ class MatchService:
     def update_match_score(self, uuid_match, score_json):
         self.match_dao.update_match(uuid_match, score_json)
 
-    # def get_match(self, match_uuid):
-    #     pass
+    def get_match(self, match_uuid):
+        match = self.match_dao.get_match_by_uuid(match_uuid)
+        return match
 
     # def is_match(self, name):
+
     #     """ Проверка игрока есть ли он в БД """
     #     pass
+

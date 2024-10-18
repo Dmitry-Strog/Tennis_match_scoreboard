@@ -2,6 +2,7 @@ from urllib.parse import parse_qs
 
 from src.service.match_data import MatchData
 from src.service.new_match_service import NewMatchService
+from src.templates.config_jinja import render_page
 
 
 class NewMatchHandler:
@@ -12,8 +13,10 @@ class NewMatchHandler:
         status = "200 OK"
         headers = [('Content-type', 'text/html; charset=utf-8')]
         start_response(status, headers)
-        with open("src/views/pages/index.html", "rb") as file:
-            return [file.read()]
+        rendered_html = render_page("new-match.html")
+        return [rendered_html.encode('utf-8')]
+        # with open("src/views/pages/index.html", "rb") as file:
+        #     return [file.read()]
 
     def request_post(self, environ, start_response):
         content_length = int(environ.get('CONTENT_LENGTH', 0))

@@ -13,9 +13,9 @@ class ScoreboardTennis:
         0: "0", 1: "15", 2: "30", 3: "40", 4: "AD"
     }
 
-    def __init__(self, player_name1, player_name2):
-        self.player1 = PlayerScoreTennis(player_name1)
-        self.player2 = PlayerScoreTennis(player_name2)
+    def __init__(self, player_name1, player_name2, score=None):
+        self.player1 = PlayerScoreTennis(player_name1, score)
+        self.player2 = PlayerScoreTennis(player_name2, score)
         self.game = TennisGame(self.player1, self.player2)
         self.set = TennisSet(self.player1, self.player2)
         self.tie_break = TieBreak(self.player1, self.player2)
@@ -91,8 +91,8 @@ class ScoreboardTennis:
     def to_dict(self):
         player1_dict = self.player1.to_dict()
         player2_dict = self.player2.to_dict()
-        player1_dict["game_score"] = self.SCORE_MAPPING_GAME[self.player1.game_score]
-        player2_dict["game_score"] = self.SCORE_MAPPING_GAME[self.player2.game_score]
+        player1_dict["game_score"] = self.SCORE_MAPPING_GAME[int(self.player1.game_score)]
+        player2_dict["game_score"] = self.SCORE_MAPPING_GAME[int(self.player2.game_score)]
 
         return {
             self.player1.name: player1_dict,

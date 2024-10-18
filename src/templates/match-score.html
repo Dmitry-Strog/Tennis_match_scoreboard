@@ -1,5 +1,41 @@
 {% extends 'base.html' %}
 
-{% block title %}Работает{% endblock %}
+{% block title %}Табло тенниса{% endblock %}
 
-{% block content %} <h1>РАБОТАЕТ!!</h1>{% endblock %}
+{% block content %}
+<div>
+    <h1> Match score</h1>
+</div>
+    <div class="players-container">
+        <div class="player-score"></div>
+        <div class="player-score">Match</div>
+        <div class="player-score">Set</div>
+        <div class="player-score">Point</div>
+        <div class="player-score"></div>
+    </div>
+    <div class="players-container">
+        <div class="player-score">{{ player1 }}</div>
+        <div class="player-score">{{ score["Dmitry"]["match_score"] }}</div>
+        <div class="player-score">{{ score["Dmitry"]["set_score"] }}</div>
+        <div class="player-score">{{ score["Dmitry"]["match_score"] }}</div>
+        <div class="player-score">
+            <form action="/match-score" method="POST">
+                    <input type="hidden" value="1">
+                    <button type="submit">+</button>
+            </form>
+        </div>
+    </div>
+    <div class="players-container">
+        <div class="player-score">{{ player2 }}</div>
+        <div class="player-score">{{ score["Maria"]["match_score"] }}</div>
+        <div class="player-score">{{ score["Maria"]["set_score"] }}</div>
+        <div class="player-score">{{ score["Maria"]["match_score"] }}</div>
+        <div class="player-score">
+            <form action="/match-score" method="POST">
+                    <input type="hidden" name="uuid" value="uuid_id">
+                    <input type="hidden" name="player2" value="2">
+                    <button type="submit">+</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

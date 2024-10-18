@@ -1,11 +1,17 @@
 class PlayerScoreTennis:
-    def __init__(self, name):
-
-        self.name = name
-        self.game_score = 0
-        self.tie_break_score = 0
-        self.set_score = 0
-        self.match_score = 0
+    def __init__(self, name, score=None):
+        if score is not None:
+            self.name = name
+            self.game_score = score[name]["game_score"]
+            self.tie_break_score = score[name]["tie_break_score"]
+            self.set_score = score[name]["set_score"]
+            self.match_score = score[name]["match_score"]
+        else:
+            self.name = name
+            self.game_score = 0
+            self.tie_break_score = 0
+            self.set_score = 0
+            self.match_score = 0
 
     def to_dict(self):
         return {

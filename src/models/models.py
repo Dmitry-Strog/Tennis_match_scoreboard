@@ -38,4 +38,4 @@ class MatchesModel(Base):
     def __repr__(self):
         return (f"MatchesModel {self.ID}: {self.UUID}, "
                 f"Player 1: {self.player1_rel.NAME}, Player 2: {self.player2_rel.NAME}, "
-                f"Winner: {self.winner_rel.NAME}, Score: {self.score}")
+                f"Winner: {self.winner_rel}, Score: {self.score}")
