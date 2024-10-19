@@ -13,14 +13,21 @@ class MatchScoreService:
 
     def play_match(self, uuid, point=None):
         match = self.find_match(uuid)
+
         player1, player2 = self.find_player(match.player1, match.player2)
+
         score_dict = self.json_converter.json_to_dict(match.score)
+
         scoreboard = ScoreboardTennis(player1.NAME, player2.NAME, score_dict)
-        score_json = self.json_converter.dict_to_json(scoreboard.to_dict())
+
         if point is not None:
+            scoreboard.simulation_scoreboard(point)
+
+            score_json = self.json_converter.dict_to_json(scoreboard.to_dict())
             self.match.update_match_score(uuid, score_json)
-            return MatchData(uuid, score_json)
-        return MatchData(uuid, score_dict)
+
+            return MatchData(uuid, scoreboard.to_dict())
+        return MatchData(uuid, scoreboard.to_dict())
 
     def find_match(self, uuid):
         match_obj = self.match.get_match(uuid)
@@ -30,7 +37,3 @@ class MatchScoreService:
         player1 = self.player.get_player_by_id(player1_id)
         player2 = self.player.get_player_by_id(player2_id)
         return player1, player2
-
-# tmp = MatchScoreService()
-# q = tmp.play_match("b3342984-2468-4e1e-a392-2d057bbe01df")
-# print(type(q.score))

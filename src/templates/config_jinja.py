@@ -8,14 +8,9 @@ template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../templ
 env = Environment(loader=FileSystemLoader(template_dir))
 
 
-def render_page(html_name, context: dict):
-    """
-    Функция для рендеринга HTML-шаблона с переданными переменными.
-
-    :param html_name: Имя HTML-шаблона.
-    :param kwargs: Переменные, которые будут использоваться в шаблоне.
-    :return: Отрендеренный HTML-код.
-    """
+def render_page(html_name, context: dict = None):
+    if context is None:
+        context = {}
     template = env.get_template(html_name)
     return template.render(context)
 

@@ -15,25 +15,34 @@
     </div>
     <div class="players-container">
         <div class="player-score">{{ player1 }}</div>
-        <div class="player-score">{{ score["Dmitry"]["match_score"] }}</div>
-        <div class="player-score">{{ score["Dmitry"]["set_score"] }}</div>
-        <div class="player-score">{{ score["Dmitry"]["match_score"] }}</div>
+        <div class="player-score">{{ score[player1]["match_score"] }}</div>
+        <div class="player-score">{{ score[player1]["set_score"] }}</div>
+        {% if score["Dmitry"]["tie_break_score"] %}
+        <div class="player-score">{{ score[player1]["tie_break_score"] }}</div>
+        {% else %}
+        <div class="player-score">{{ score[player1]["game_score"] }}</div>
+        {% endif %}
         <div class="player-score">
             <form action="/match-score" method="POST">
-                    <input type="hidden" value="1">
+                    <input type="hidden" name="uuid" value={{ uuid }}>
+                    <input type="hidden" name="point" value="1">
                     <button type="submit">+</button>
             </form>
         </div>
     </div>
     <div class="players-container">
         <div class="player-score">{{ player2 }}</div>
-        <div class="player-score">{{ score["Maria"]["match_score"] }}</div>
-        <div class="player-score">{{ score["Maria"]["set_score"] }}</div>
-        <div class="player-score">{{ score["Maria"]["match_score"] }}</div>
+        <div class="player-score">{{ score[player2]["match_score"] }}</div>
+        <div class="player-score">{{ score[player2]["set_score"] }}</div>
+        {% if score["Dmitry"]["tie_break_score"] %}
+        <div class="player-score">{{ score[player2]["tie_break_score"] }}</div>
+        {% else %}
+        <div class="player-score">{{ score[player2]["game_score"] }}</div>
+        {% endif %}
         <div class="player-score">
             <form action="/match-score" method="POST">
-                    <input type="hidden" name="uuid" value="uuid_id">
-                    <input type="hidden" name="player2" value="2">
+                    <input type="hidden" name="uuid" value={{ uuid }}>
+                    <input type="hidden" name="point" value="2">
                     <button type="submit">+</button>
             </form>
         </div>

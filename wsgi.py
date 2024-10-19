@@ -26,7 +26,7 @@ class MainServer:
                 response = handler.request_get(environ, start_response)
                 return response
             if request_method == 'POST':
-                response = handler.request_get(start_response)
+                response = handler.request_post(environ, start_response)
                 return response
 
         elif request_uri.startswith("/static/css"):
@@ -35,6 +35,8 @@ class MainServer:
             start_response(status, content_type)
             with open("src/views/static/css/styles.css", "rb") as file:
                 return [file.read()]
+        elif request_uri.startswith("/favicon.ico"):
+            print(request_uri)
 
 
 if __name__ == '__main__':

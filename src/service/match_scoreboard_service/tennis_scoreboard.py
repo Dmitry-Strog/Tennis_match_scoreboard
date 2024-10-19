@@ -10,7 +10,7 @@ from src.service.match_scoreboard_service.tennis_tie_break import TieBreak
 class ScoreboardTennis:
 
     SCORE_MAPPING_GAME = {
-        0: "0", 1: "15", 2: "30", 3: "40", 4: "AD"
+        0: 0, 1: "15", 2: "30", 3: "40", 4: "AD"
     }
 
     def __init__(self, player_name1, player_name2, score=None):
