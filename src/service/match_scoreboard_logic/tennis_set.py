@@ -1,4 +1,4 @@
-from src.service.match_scoreboard_service.player_score_tennis import PlayerScoreTennis
+from src.service.match_scoreboard_logic.player_score_tennis import PlayerScoreTennis
 
 
 class TennisSet:

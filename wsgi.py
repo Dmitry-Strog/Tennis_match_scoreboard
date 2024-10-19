@@ -31,12 +31,17 @@ class MainServer:
 
         elif request_uri.startswith("/static/css"):
             status = "200 OK"
-            content_type = [('Content-type', 'text/css; charset=utf-8')]
-            start_response(status, content_type)
+            headers = [('Content-type', 'text/css; charset=utf-8')]
+            start_response(status, headers)
             with open("src/views/static/css/styles.css", "rb") as file:
                 return [file.read()]
+
         elif request_uri.startswith("/favicon.ico"):
-            print(request_uri)
+            status = "200 OK"
+            headers = [('Content-type', 'image/x-icon')]
+            start_response(status, headers)
+            with open("src/views/static/img/logo-tennis.png", "rb") as file:
+                return [file.read()]
 
 
 if __name__ == '__main__':

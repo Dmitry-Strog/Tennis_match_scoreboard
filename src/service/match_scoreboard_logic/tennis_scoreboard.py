@@ -1,10 +1,10 @@
 from typing import Tuple
 
-from src.service.match_scoreboard_service.player_score_tennis import PlayerScoreTennis
-from src.service.match_scoreboard_service.tennis_game import TennisGame
-from src.service.match_scoreboard_service.tennis_match import TennisMatch
-from src.service.match_scoreboard_service.tennis_set import TennisSet
-from src.service.match_scoreboard_service.tennis_tie_break import TieBreak
+from src.service.match_scoreboard_logic.player_score_tennis import PlayerScoreTennis
+from src.service.match_scoreboard_logic.tennis_game import TennisGame
+from src.service.match_scoreboard_logic.tennis_match import TennisMatch
+from src.service.match_scoreboard_logic.tennis_set import TennisSet
+from src.service.match_scoreboard_logic.tennis_tie_break import TieBreak
 
 
 class ScoreboardTennis:

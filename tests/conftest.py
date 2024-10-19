@@ -1,5 +1,5 @@
 import pytest
-from src.service.match_scoreboard_service.tennis_scoreboard import ScoreboardTennis
+from src.service.match_scoreboard_logic.tennis_scoreboard import ScoreboardTennis
 
 
 @pytest.fixture()

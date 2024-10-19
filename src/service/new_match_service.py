@@ -1,5 +1,5 @@
 from src.service.match_data import MatchData
-from src.service.match_scoreboard_service.tennis_scoreboard import ScoreboardTennis
+from src.service.match_scoreboard_logic.tennis_scoreboard import ScoreboardTennis
 from src.service.match_service import MatchService
 from src.service.object_to_json import ObjectToJsonDb
 from src.service.player_service import PlayerService
