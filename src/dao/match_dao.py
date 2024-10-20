@@ -23,8 +23,10 @@ class MatchDao:
             ).filter_by(UUID=str(match_uuid)).first()
             return match
 
-    def update_match(self, uuid_match, score_json):
+    def update_match(self, uuid_match, score_json, winner_id=None):
         with sessions() as session:
             match: MatchesModel = session.query(MatchesModel).filter(MatchesModel.UUID == uuid_match).one_or_none()
             match.score = score_json
+            if winner_id is not None:
+                match.winner = winner_id
             session.commit()

@@ -1,6 +1,6 @@
 from urllib.parse import parse_qs
 
-from src.service.match_data import MatchData
+from src.service.data_access_or_storage.match_data import MatchData
 from src.service.new_match_service import NewMatchService
 from src.templates.config_jinja import render_page
 

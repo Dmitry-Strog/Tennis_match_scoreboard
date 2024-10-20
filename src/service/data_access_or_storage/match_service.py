@@ -10,15 +10,12 @@ class MatchService:
         match_uuid = self.match_dao.insert_table_matches(player1.ID, player2.ID)
         return match_uuid
 
-    def update_match_score(self, uuid_match, score_json):
-        self.match_dao.update_match(uuid_match, score_json)
+    def update_match_score(self, uuid_match, score_json, winner=None):
+        if winner is None:
+            self.match_dao.update_match(uuid_match, score_json)
+        else:
+            self.match_dao.update_match(uuid_match, score_json, winner)
 
     def get_match(self, match_uuid):
         match = self.match_dao.get_match_by_uuid(match_uuid)
         return match
-
-    # def is_match(self, name):
-
-    #     """ Проверка игрока есть ли он в БД """
-    #     pass
-

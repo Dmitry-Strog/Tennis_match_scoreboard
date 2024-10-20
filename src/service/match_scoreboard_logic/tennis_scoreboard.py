@@ -29,8 +29,6 @@ class ScoreboardTennis:
             self.update_tie_break(winner_player, loser_player)
         else:
             self.update_game(winner_player, loser_player)
-        if self.winner_player is not None:
-            return self.winner_player
 
     def get_players(self, point_player) -> Tuple[PlayerScoreTennis, PlayerScoreTennis]:
         if point_player == 1:
@@ -80,7 +78,6 @@ class ScoreboardTennis:
             self.tie_break.reset_points()
 
     def update_match(self, winner_player, loser_player):
-
         if winner_player is self.player1:
             self.match.add_point_to_player1()
         elif winner_player is self.player2:

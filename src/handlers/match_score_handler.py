@@ -1,6 +1,6 @@
 from urllib.parse import parse_qs
 
-from src.service.match_data import MatchData
+from src.service.data_access_or_storage.match_data import MatchData
 from src.service.match_score_service import MatchScoreService
 from src.templates.config_jinja import render_page
 
@@ -43,11 +43,11 @@ class MatchScoreHandler:
             "player1": player1,
             "player2": player2,
             "score": match.score,
+            "winner": match.winner,
         }
 
         rendered_html = render_page("match-score.html", context)
         return [rendered_html.encode('utf-8')]
-        # return [b'Redirecting...']
 
     def parse_url(self, post_data):
         data = parse_qs(post_data)

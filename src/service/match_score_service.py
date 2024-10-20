@@ -1,8 +1,8 @@
-from src.service.match_data import MatchData
+from src.service.data_access_or_storage.match_data import MatchData
 from src.service.match_scoreboard_logic.tennis_scoreboard import ScoreboardTennis
-from src.service.match_service import MatchService
+from src.service.data_access_or_storage.match_service import MatchService
 from src.service.object_to_json import ObjectToJsonDb
-from src.service.player_service import PlayerService
+from src.service.data_access_or_storage.player_service import PlayerService
 
 
 class MatchScoreService:
@@ -23,10 +23,16 @@ class MatchScoreService:
         if point is not None:
             scoreboard.simulation_scoreboard(point)
 
+            if scoreboard.winner_player is not None:
+                winner = self.player.get_player(scoreboard.winner_player.name)
+                score_json = self.json_converter.dict_to_json(scoreboard.to_dict())
+                self.match.update_match_score(uuid, score_json, winner.ID)
+                return MatchData(uuid, scoreboard.to_dict(), winner.NAME)
+
             score_json = self.json_converter.dict_to_json(scoreboard.to_dict())
             self.match.update_match_score(uuid, score_json)
-
             return MatchData(uuid, scoreboard.to_dict())
+
         return MatchData(uuid, scoreboard.to_dict())
 
     def find_match(self, uuid):
