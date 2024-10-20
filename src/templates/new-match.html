@@ -3,6 +3,7 @@
 {% block title %}Новый матч{% endblock %}
 
 {% block content %}
+        <div class="container_new_match">
             <form action="/new-match" method="POST">
                 <div class="players">
                     <div class="player">Игрок 1:</div>
@@ -16,6 +17,12 @@
                 <div class="inputs">
                     <input type="text" name="player2" maxlength="12" placeholder="Введите имя игрока 2" required>
                 </div>
-                <button type="submit" >Начать игру</button>
+                <div class="container-button">
+                    <div class="">
+                        <button class="button_new_match" type="submit" >Начать игру</button>
+                    </div>
+
+                </div>
             </form>
+        </div>
 {% endblock %}

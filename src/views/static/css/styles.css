@@ -1,10 +1,81 @@
-body {
-    background-color: #2b2b2b;
+/* Общие стили для формы */
+.container_new_match {
+    max-width: 400px;
+    margin: 150px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовков игроков */
+.players {
+    margin-bottom: 10px;
+}
+
+.player {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Стили для полей ввода */
+.inputs {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #5fe3ff;
+    outline: none;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    gap: 5px;
+    width: auto;
+}
+
+/* Стили для кнопки */
+.button_new_match {
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    font-size: 20px;
+    border: none;
+    background-color: #5fe3ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button_new_match:hover {
+    background-color: #3fc0e6;
+    transform: translateY(-2px);
+}
+
+.button_new_match:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-    margin: 20px auto;
-    background-color: #fff;
+    margin: 150px auto;
+    background-color: #f9f9f9;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -17,36 +88,34 @@ body {
     justify-content: space-between;
     margin-bottom: 5px;
     gap: 5px;
+
 }
 
 .player-score{
     width: 100px;
     height: 20px;
     padding: 10px;
-
-}
-.inputs {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
 }
 
-.inputs input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.button_match_score {
+    display: block;
+    width: 35%;
     font-size: 20px;
-}
-
-button {
-    padding: 5px 20px;
-    font-size: 10px;
     border: none;
     background-color: #5fe3ff;
     color: white;
     cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #30c8e8;
+.button_match_score:hover {
+    background-color: #3fc0e6;
+    transform: translateY(-2px);
+}
+
+.button_match_score:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
