@@ -56,7 +56,7 @@ class TestTennisSet:
         tennis.game.reset_points()
         TennisScoreUpdater().add_score_set(score_point, tennis)
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)
-        assert tennis.match.player1_point == res or tennis.match.player2_point == res
+        assert tennis.__match.player1_point == res or tennis.__match.player2_point == res
 
     @pytest.mark.parametrize(
         "score_point, score_player, player1_point, player2_point, res",
@@ -110,4 +110,4 @@ class TestTennisSet:
         tennis.game.reset_points()
         TennisScoreUpdater().add_score_set(score_point, tennis)
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)
-        assert tennis.match.player1_point == res or tennis.match.player2_point == res
+        assert tennis.__match.player1_point == res or tennis.__match.player2_point == res

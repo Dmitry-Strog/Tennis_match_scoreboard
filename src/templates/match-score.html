@@ -23,8 +23,8 @@
         <div class="player-score">{{ score[player1]["game_score"] }}</div>
         {% endif %}
         <div class="player-score">
-            {% if not winner %}
-            <form action="/match-score" method="POST">
+            {% if winner == None %}
+            <form action="/match-score?uuid={{ uuid }}" method="POST">
                     <input type="hidden" name="uuid" value={{ uuid }}>
                     <input type="hidden" name="point" value="1">
                     <button type="submit">+</button>
@@ -44,8 +44,8 @@
         <div class="player-score">{{ score[player2]["game_score"] }}</div>
         {% endif %}
         <div class="player-score">
-            {% if not winner %}
-            <form action="/match-score" method="POST">
+            {% if winner == None %}
+            <form action="/match-score?uuid={{ uuid }}" method="POST">
                     <input type="hidden" name="uuid" value={{ uuid }}>
                     <input type="hidden" name="point" value="2">
                     <button type="submit">+</button>

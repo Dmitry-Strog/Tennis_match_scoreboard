@@ -31,16 +31,12 @@
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/match_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/match_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/handlers/match_score_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/match_score_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/new_match_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/new_match_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/match_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/match_score_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/match_score_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/new_match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/new_match_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/player_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/player_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/match-score.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/match-score.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/static/img/logo-tennis.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/static/img/logo-tennis.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tennis_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tennis_set.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,8 +119,8 @@
       <recent name="$PROJECT_DIR$/src/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/service/data_access_or_storage" />
       <recent name="$PROJECT_DIR$/src/views/static/img" />
+      <recent name="$PROJECT_DIR$/src/service/data_access_or_storage" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/models" />
       <recent name="$PROJECT_DIR$/src/views" />

@@ -22,6 +22,7 @@ class MatchScoreHandler:
             "player1": player1,
             "player2": player2,
             "score": match.score,
+            "winner": match.winner,
         }
 
         rendered_html = render_page("match-score.html", context)

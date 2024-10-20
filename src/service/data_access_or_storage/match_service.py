@@ -16,6 +16,10 @@ class MatchService:
         else:
             self.match_dao.update_match(uuid_match, score_json, winner)
 
-    def get_match(self, match_uuid):
+    def get_match_by_uuid(self, match_uuid):
+        match = self.match_dao.get_match_by_uuid(match_uuid)
+        return match
+
+    def get_match_winner_id(self, match_uuid):
         match = self.match_dao.get_match_by_uuid(match_uuid)
         return match
