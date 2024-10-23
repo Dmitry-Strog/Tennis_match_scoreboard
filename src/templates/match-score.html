@@ -16,14 +16,14 @@
         </div>
         <div class="players-container">
             <div class="player-score">{{ player1 }}</div>
-            <div class="player-score">{{ score[player1]["match_score"] }}</div>
-            <div class="player-score">{{ score[player1]["set_score"] }}</div>
+            <div class="player-score match-color">{{ score[player1]["match_score"] }}</div>
+            <div class="player-score set-color">{{ score[player1]["set_score"] }}</div>
             {% if score[player1]["tie_break_score"] %}
-            <div class="player-score">{{ score[player1]["tie_break_score"] }}</div>
+            <div class="player-score game-color">{{ score[player1]["tie_break_score"] }}</div>
             {% else %}
-            <div class="player-score">{{ score[player1]["game_score"] }}</div>
+            <div class="player-score game-color">{{ score[player1]["game_score"] }}</div>
             {% endif %}
-            <div class="player-score">
+            <div class="player-winner">
                 {% if winner == None %}
                 <form action="/match-score?uuid={{ uuid }}" method="POST">
                         <input type="hidden" name="uuid" value={{ uuid }}>
@@ -31,20 +31,20 @@
                         <button class="button_match_score" type="submit">+</button>
                 </form>
                 {% elif winner == player1 %}
-                Win!
+                🏆
                 {% endif %}
             </div>
         </div>
         <div class="players-container">
             <div class="player-score">{{ player2 }}</div>
-            <div class="player-score">{{ score[player2]["match_score"] }}</div>
-            <div class="player-score">{{ score[player2]["set_score"] }}</div>
+            <div class="player-score match-color">{{ score[player2]["match_score"] }}</div>
+            <div class="player-score set-color">{{ score[player2]["set_score"] }}</div>
             {% if score[player2]["tie_break_score"] %}
-            <div class="player-score">{{ score[player2]["tie_break_score"] }}</div>
+            <div class="player-score game-color">{{ score[player2]["tie_break_score"] }}</div>
             {% else %}
-            <div class="player-score">{{ score[player2]["game_score"] }}</div>
+            <div class="player-score game-color">{{ score[player2]["game_score"] }}</div>
             {% endif %}
-            <div class="player-score">
+            <div class="player-winner">
                 {% if winner == None %}
                 <form action="/match-score?uuid={{ uuid }}" method="POST">
                         <input type="hidden" name="uuid" value={{ uuid }}>
@@ -52,7 +52,7 @@
                         <button class="button_match_score" type="submit">+</button>
                 </form>
                 {% elif winner == player2 %}
-                Win!
+                🏆
                 {% endif %}
             </div>
         </div>

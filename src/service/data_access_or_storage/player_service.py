@@ -10,6 +10,11 @@ class PlayerService:
             return self.__player_dao.get_player(player)
         return self.save_player(player)
 
+    def get_players_by_id(self, player1_id, player2_id):
+        player1 = self.__player_dao.get_player_by_id(player1_id)
+        player2 = self.__player_dao.get_player_by_id(player2_id)
+        return player1, player2
+
     def get_player_by_id(self, player_id: int):
         player = self.__player_dao.get_player_by_id(player_id)
         return player
