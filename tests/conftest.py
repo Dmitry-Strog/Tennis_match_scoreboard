@@ -27,8 +27,8 @@ class TennisScoreUpdater:
         """
         tennis = match
         for _ in range(point):
-            tennis.match.update_point(1, 0)
-            tennis.match.update_point(0, 1)
+            tennis.__match.update_point(1, 0)
+            tennis.__match.update_point(0, 1)
 
     def add_score_set(self, point: int, match: ScoreboardTennis):
         """
@@ -39,10 +39,10 @@ class TennisScoreUpdater:
         """
         tennis = match
         for _ in range(point):
-            tennis.match.update_point(1, 0)
-            tennis.match.update_point(1, 0)
-            tennis.match.update_point(0, 1)
-            tennis.match.update_point(0, 1)
+            tennis.__match.update_point(1, 0)
+            tennis.__match.update_point(1, 0)
+            tennis.__match.update_point(0, 1)
+            tennis.__match.update_point(0, 1)
 
     def add_score_player(self, player1_point: int, player2_point: int, point: int, match: ScoreboardTennis):
         """
@@ -56,4 +56,4 @@ class TennisScoreUpdater:
         """
         tennis = match
         for _ in range(point):
-            tennis.match.update_point(player1_point, player2_point)
+            tennis.__match.update_point(player1_point, player2_point)

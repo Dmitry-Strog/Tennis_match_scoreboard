@@ -7,7 +7,7 @@ from src.templates.config_jinja import render_page
 
 class NewMatchHandler:
     def __init__(self):
-        self.service = NewMatchService()
+        self.__service = NewMatchService()
 
     def request_get(self, start_response):
         status = "200 OK"
@@ -23,7 +23,7 @@ class NewMatchHandler:
         post_data = environ['wsgi.input'].read(content_length).decode('utf-8')
         player1_name, player2_name = self.parse_url(post_data)
 
-        match_data: MatchData = self.service.start_match(player1_name, player2_name)
+        match_data: MatchData = self.__service.start_match(player1_name, player2_name)
         uuid = match_data.uuid
         status = '303 See Other'
         headers = [('Location', f'/match-score?uuid={uuid}')]

@@ -21,7 +21,6 @@ class MainServer:
 
         elif request_uri == "/match-score":
             handler = MatchScoreHandler()
-
             if request_method == 'GET':
                 response = handler.request_get(environ, start_response)
                 return response

@@ -7,23 +7,23 @@ from src.service.data_access_or_storage.player_service import PlayerService
 
 class NewMatchService:
     def __init__(self):
-        self.player = PlayerService()
-        self.match = MatchService()
-        self.json_converter = ObjectToJsonDb()
+        self.__player = PlayerService()
+        self.__match = MatchService()
+        self.__json_converter = ObjectToJsonDb()
 
     def start_match(self, name_player1, name_player2):
-        player1, player2 = self.find_player(name_player1, name_player2)
-        uuid = self.find_match(player1, player2)
+        player1, player2 = self.__find_player(name_player1, name_player2)
+        uuid = self.__find_match(player1, player2)
         scoreboard = ScoreboardTennis(player1.NAME, player2.NAME)
-        score_json = self.json_converter.dict_to_json(scoreboard.to_dict())
-        self.match.update_match_score(uuid, score_json)
+        score_json = self.__json_converter.dict_to_json(scoreboard.to_dict())
+        self.__match.update_match_score(uuid, score_json)
         return MatchData(uuid, score_json)
 
-    def find_match(self, player1, player2):
-        match_uuid = self.match.create_match(player1, player2)
+    def __find_match(self, player1, player2):
+        match_uuid = self.__match.create_match(player1, player2)
         return match_uuid
 
-    def find_player(self, name_player1, name_player2):
-        player1 = self.player.get_player(name_player1)
-        player2 = self.player.get_player(name_player2)
+    def __find_player(self, name_player1, name_player2):
+        player1 = self.__player.get_player(name_player1)
+        player2 = self.__player.get_player(name_player2)
         return player1, player2

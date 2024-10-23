@@ -27,7 +27,7 @@ class TestTennisSet:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()  # Сброс очков перед тестом
+        tennis.__game.reset_points()  # Сброс очков перед тестом
         TennisScoreUpdater().add_score_set(score_point, tennis)  # Установка необходимого счёта для тай-брейка
         assert tennis.tennis_set.tie_break_flag == res
 
@@ -53,7 +53,7 @@ class TestTennisSet:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_set(score_point, tennis)
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)
         assert tennis.__match.player1_point == res or tennis.__match.player2_point == res
@@ -80,7 +80,7 @@ class TestTennisSet:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_set(score_point, tennis)
         TennisScoreUpdater().add_score_players(score_player, tennis)
         assert tennis.tennis_set.player1_wins == res or tennis.tennis_set.player2_wins == res
@@ -107,7 +107,7 @@ class TestTennisSet:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_set(score_point, tennis)
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)
         assert tennis.__match.player1_point == res or tennis.__match.player2_point == res

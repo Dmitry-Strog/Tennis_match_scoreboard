@@ -26,9 +26,9 @@ class TestTennisGame:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()  # Сброс очков перед тестом
+        tennis.__game.reset_points()  # Сброс очков перед тестом
         TennisScoreUpdater().add_score_players(score_point, tennis)  # Добавление очков обоим игрокам
-        assert tennis.game.deuce is res
+        assert tennis.__game.deuce is res
 
     @pytest.mark.parametrize(
         "score_point, score_player, player1_point, player2_point, res",
@@ -51,11 +51,11 @@ class TestTennisGame:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_players(score_point, tennis)  # Установка состояния "deuce"
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)  # Добавление очков
-        assert (tennis.game.SCORE_MAPPING[tennis.game.player1_point] == res
-                or tennis.game.SCORE_MAPPING[tennis.game.player2_point] == res)
+        assert (tennis.__game.SCORE_MAPPING[tennis.__game.player1_point] == res
+                or tennis.__game.SCORE_MAPPING[tennis.__game.player2_point] == res)
 
     @pytest.mark.parametrize(
         "score_point, res",
@@ -73,10 +73,10 @@ class TestTennisGame:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_players(score_point, tennis)
-        assert (tennis.game.SCORE_MAPPING[tennis.game.player1_point]
-                and tennis.game.SCORE_MAPPING[tennis.game.player2_point])
+        assert (tennis.__game.SCORE_MAPPING[tennis.__game.player1_point]
+                and tennis.__game.SCORE_MAPPING[tennis.__game.player2_point])
 
     @pytest.mark.parametrize(
         "score_point, score_player, player1_point, player2_point, res",
@@ -98,7 +98,7 @@ class TestTennisGame:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_players(score_point, tennis)  # Установка состояния "deuce"
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_player, tennis)  # Добавление очков
         assert (tennis.tennis_set.player1_point == res
@@ -123,6 +123,6 @@ class TestTennisGame:
         :param create_match: Фикстура для создания матча с начальной установкой игры.
         """
         tennis = create_match
-        tennis.game.reset_points()
+        tennis.__game.reset_points()
         TennisScoreUpdater().add_score_player(player1_point, player2_point, score_point, tennis)
         assert tennis.tennis_set.player1_point == res or tennis.tennis_set.player2_point == res

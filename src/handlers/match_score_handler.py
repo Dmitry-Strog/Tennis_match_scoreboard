@@ -7,13 +7,13 @@ from src.templates.config_jinja import render_page
 
 class MatchScoreHandler:
     def __init__(self):
-        self.service = MatchScoreService()
+        self.__service = MatchScoreService()
 
     def request_get(self, environ, start_response):
         status = "200 OK"
         headers = [('Content-type', 'text/html; charset=utf-8')]
         uuid = parse_qs(environ['QUERY_STRING'])["uuid"][0]
-        match: MatchData = self.service.play_match(uuid)
+        match: MatchData = self.__service.play_match(uuid)
         player1, player2 = match.score.keys()
         start_response(status, headers)
 
@@ -35,7 +35,7 @@ class MatchScoreHandler:
         status = '200 OK'
         headers = [('Content-type', 'text/html; charset=utf-8')]
 
-        match: MatchData = self.service.play_match(uuid, point)
+        match: MatchData = self.__service.play_match(uuid, point)
         player1, player2 = match.score.keys()
         start_response(status, headers)
 
