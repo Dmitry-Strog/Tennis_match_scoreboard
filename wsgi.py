@@ -1,5 +1,6 @@
 from waitress import serve
 
+from src.handlers.finished_match_handler import FinishedMatchHandler
 from src.handlers.match_score_handler import MatchScoreHandler
 from src.handlers.new_match_handler import NewMatchHandler
 
@@ -26,6 +27,12 @@ class MainServer:
                 return response
             if request_method == 'POST':
                 response = handler.request_post(environ, start_response)
+                return response
+
+        elif request_uri == "/matches":
+            handler = FinishedMatchHandler()
+            if request_method == 'GET':
+                response = handler.request_get(environ, start_response)
                 return response
 
         elif request_uri.startswith("/static/css"):

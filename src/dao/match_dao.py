@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import update
+from sqlalchemy import update, and_
 from sqlalchemy.orm import joinedload
 
 from src.models import MatchesModel, sessions
@@ -22,6 +22,19 @@ class MatchDao:
                 joinedload(MatchesModel.winner_rel),
             ).filter_by(UUID=str(match_uuid)).first()
             return match
+
+    def get_finished_matches(self, name=None):
+        with sessions() as session:
+            matches = session.query(MatchesModel).options(
+                joinedload(MatchesModel.player1_rel),
+                joinedload(MatchesModel.player2_rel),
+                joinedload(MatchesModel.winner_rel),
+            ).filter(MatchesModel.winner != None)
+
+            if name:
+                matches = matches.filter(MatchesModel.winner_rel.has(NAME=name))
+
+            return matches.all()
 
     def update_match(self, uuid_match, score_json, winner_id=None):
         with sessions() as session:

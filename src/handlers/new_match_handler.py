@@ -15,8 +15,6 @@ class NewMatchHandler:
         start_response(status, headers)
         rendered_html = render_page("new-match.html")
         return [rendered_html.encode('utf-8')]
-        # with open("src/views/pages/index.html", "rb") as file:
-        #     return [file.read()]
 
     def request_post(self, environ, start_response):
         content_length = int(environ.get('CONTENT_LENGTH', 0))

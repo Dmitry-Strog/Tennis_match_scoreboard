@@ -17,6 +17,10 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/handlers/finished_match_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/finished_match_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/pagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/matches.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -31,10 +35,11 @@
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/data_access_or_storage/player_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/player_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/match_score_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/match_score_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/match-score.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/match-score.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/match_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/match_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handlers/new_match_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/new_match_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,46 +77,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python tests.Python tests for test_main.test_main.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_tennis_game.TestTennisGame.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_tennis_set.TestTennisSet.test_set_winner.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_tennis_game.py.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.a.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config_jinja.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_table.executor&quot;: &quot;Run&quot;,
-    &quot;Python.database.executor&quot;: &quot;Run&quot;,
-    &quot;Python.example.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.match_dao.executor&quot;: &quot;Run&quot;,
-    &quot;Python.match_score_service.executor&quot;: &quot;Run&quot;,
-    &quot;Python.match_service.executor&quot;: &quot;Run&quot;,
-    &quot;Python.models.executor&quot;: &quot;Run&quot;,
-    &quot;Python.new_match_service.executor&quot;: &quot;Run&quot;,
-    &quot;Python.object_to_json.executor&quot;: &quot;Run&quot;,
-    &quot;Python.orm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.player_dao.executor&quot;: &quot;Run&quot;,
-    &quot;Python.player_score_tennis.executor&quot;: &quot;Run&quot;,
-    &quot;Python.player_service.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tennis.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tennis_game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tennis_scoreboard.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tennis_set.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.tst.executor&quot;: &quot;Run&quot;,
-    &quot;Python.write_messages.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wsgi.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/dmitrij/PycharmProjects/Tennis_match_scoreboard/src/templates&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python tests.Python tests for test_main.test_main.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game.executor": "Debug",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40.executor": "Run",
+    "Python tests.Python tests for test_tennis_set.TestTennisSet.test_set_winner.executor": "Run",
+    "Python tests.Python tests in test_tennis_game.py.executor": "Debug",
+    "Python.a.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.config_jinja.executor": "Run",
+    "Python.create_table.executor": "Run",
+    "Python.database.executor": "Run",
+    "Python.example.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.match_dao.executor": "Run",
+    "Python.match_score_service.executor": "Run",
+    "Python.match_service.executor": "Run",
+    "Python.models.executor": "Run",
+    "Python.new_match_service.executor": "Run",
+    "Python.object_to_json.executor": "Run",
+    "Python.orm.executor": "Run",
+    "Python.pagination.executor": "Run",
+    "Python.player_dao.executor": "Run",
+    "Python.player_score_tennis.executor": "Run",
+    "Python.player_service.executor": "Run",
+    "Python.tennis.executor": "Run",
+    "Python.tennis_game.executor": "Run",
+    "Python.tennis_scoreboard.executor": "Run",
+    "Python.tennis_set.executor": "Debug",
+    "Python.tst.executor": "Run",
+    "Python.write_messages.executor": "Run",
+    "Python.wsgi.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/dmitrij/PycharmProjects/Tennis_match_scoreboard/src/templates",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/templates" />

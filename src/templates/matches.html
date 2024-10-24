@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Завершенные матчи{% endblock %}
+
+{% block content %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div>
+        <h1> Match Finished</h1>
+    </div>
+    <div class="finished-container">
+        <form method="get">
+         <div class="finished-filter">
+             <input type="text" id='filter_player' name='filter_by_player_name' maxlength="12" placeholder="Введите имя победителя">
+         </div>
+         <div>
+             <button class="button_new_match" type="submit" >Найти</button>
+         </div>
+        </form>
+    </div>
+    <div class="players-container">
+        <div class="player-score">Player1</div>
+        <div class="player-score">Player2</div>
+        <div class="player-score">Winner</div>
+    </div>
+    {% for dict in match_list%}
+    <div class="players-container">
+        <div class="player-score match-color">{{ dict["player1"] }}</div>
+        <div class="player-score match-color">{{ dict["player2"] }}</div>
+        <div class="player-score game-color">{{ dict["winner"] }}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

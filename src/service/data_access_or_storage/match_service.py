@@ -23,3 +23,18 @@ class MatchService:
     def get_match_winner_id(self, match_uuid):
         match = self.__match_dao.get_match_by_uuid(match_uuid)
         return match
+
+    def get_finished_match(self, name=None):
+        finished_matches = []
+        matches = self.__match_dao.get_finished_matches(name)
+
+        for match in matches:
+            match_info = {
+                "player1": match.player1_rel.NAME if match.player1_rel else "None",
+                "player2": match.player2_rel.NAME if match.player2_rel else "None",
+                "winner": match.winner_rel.NAME if match.winner_rel else "None"
+            }
+            finished_matches.append(match_info)
+
+        return finished_matches
+

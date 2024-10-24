@@ -142,3 +142,17 @@ input[type="text"]:focus {
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.finished-filter {
+    flex: 3;
+    margin-right: 10px;
+}
+
+.finished-container {
+    width: 100%;
+}
+
+.finished-container form {
+    display: flex;
+    align-items: center;
+}
