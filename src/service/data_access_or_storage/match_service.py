@@ -2,7 +2,6 @@ import json
 
 from src.dao.match_dao import MatchDao
 from src.models import PlayersModel
-from src.service.object_to_json import ObjectToJsonDb
 
 
 class MatchService:

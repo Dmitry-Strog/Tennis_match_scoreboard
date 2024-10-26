@@ -30,15 +30,8 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/finished_match_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/finished_match_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/finished_match_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/object_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/object_to_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/pagination.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/matches.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,8 +123,8 @@
       <recent name="$PROJECT_DIR$/src/views" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.wsgi">
-    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,7 +137,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wsgi.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,7 +207,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.wsgi" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state" />
       <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" />
       <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40" />
@@ -222,7 +215,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_set_winner" />
         <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state" />
         <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" />
