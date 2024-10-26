@@ -1,23 +1,41 @@
 class Pagination:
-    def __init__(self, items, page_size, page_number):
-        self.items = items
-        self.page_size = page_size
-        self.page_number = page_number
+    PAGE_SIZE = 3
+
+    def __init__(self, queryset, page_number=1):
+        self.__queryset = queryset
+        self.__page_number = page_number
+        self.__validate_page()
+
+    @property
+    def page_number(self):
+        return self.__page_number
 
     def paginate(self):
-        start_index = (self.page_number - 1) * self.page_size
-        end_index = start_index + self.page_size
-        return self.items[start_index:end_index]
+        self.__validate_page()
+        start_index = (self.__page_number - 1) * self.PAGE_SIZE
+        end_index = start_index + self.PAGE_SIZE
+        return self.__queryset[start_index:end_index]
 
     def get_max_pages(self):
-        return (len(self.items) + self.page_size - 1) // self.page_size
+        return (len(self.__queryset) + self.PAGE_SIZE - 1) // self.PAGE_SIZE
 
+    def __validate_page(self):
+        if not 1 <= self.__page_number <= self.get_max_pages():
+            self.__page_number = 1
 
-items = ["Егор", "Петр", "Макс", "Дима", "Маша", "Саша", "Коля", "Олег", "Света", "Кеша"]
-page_size = 3
-page_number = 1
+    def has_next_page(self):
+        return self.__page_number < self.get_max_pages()
 
-pagination = Pagination(items, page_size, page_number)
+    def has_previous_page(self):
+        return self.__page_number > 1
 
-print(f"Страница {page_number}: {pagination.paginate()}")
-print(pagination.get_max_pages())
+    def next_page(self):
+        self.__validate_page()
+        self.__page_number += 1
+        return self.__page_number
+
+    def previous_page(self):
+        self.__validate_page()
+        self.__page_number -= 1
+        return self.__page_number
+

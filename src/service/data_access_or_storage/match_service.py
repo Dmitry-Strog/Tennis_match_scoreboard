@@ -1,5 +1,8 @@
+import json
+
 from src.dao.match_dao import MatchDao
 from src.models import PlayersModel
+from src.service.object_to_json import ObjectToJsonDb
 
 
 class MatchService:
@@ -32,9 +35,9 @@ class MatchService:
             match_info = {
                 "player1": match.player1_rel.NAME if match.player1_rel else "None",
                 "player2": match.player2_rel.NAME if match.player2_rel else "None",
-                "winner": match.winner_rel.NAME if match.winner_rel else "None"
+                "score": json.loads(match.score),
+                "winner": match.winner_rel.NAME if match.winner_rel else "None",
             }
             finished_matches.append(match_info)
 
         return finished_matches
-

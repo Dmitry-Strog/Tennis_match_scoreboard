@@ -17,10 +17,6 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/handlers/finished_match_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/finished_match_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/pagination.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/matches.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -34,12 +30,15 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/match_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/match_dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/new_match_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/new_match_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handlers/finished_match_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/finished_match_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/finished_match_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/object_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/object_to_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/pagination.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/matches.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +92,7 @@
     "Python.create_table.executor": "Run",
     "Python.database.executor": "Run",
     "Python.example.executor": "Run",
+    "Python.finished_match_handler.executor": "Run",
     "Python.main.executor": "Run",
     "Python.match_dao.executor": "Run",
     "Python.match_score_service.executor": "Run",
