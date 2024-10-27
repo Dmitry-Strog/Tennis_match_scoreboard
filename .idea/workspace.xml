@@ -32,7 +32,6 @@
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/sitewomen" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/sitewomen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
