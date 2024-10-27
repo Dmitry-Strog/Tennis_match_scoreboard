@@ -17,7 +17,7 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -31,15 +31,8 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stepik_womensite/sitewomen" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/sitewomen" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/match-score.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/match-score.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/matches.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tennis_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tennis_game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tennis_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tennis_set.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
