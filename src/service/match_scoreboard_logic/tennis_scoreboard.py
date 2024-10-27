@@ -98,16 +98,3 @@ class ScoreboardTennis:
             self.__player1.name: player1_dict,
             self.__player2.name: player2_dict,
         }
-
-
-match = ScoreboardTennis("test1", "test2")
-
-for _ in range(20):
-    match.simulation_scoreboard(1)
-    match.simulation_scoreboard(1)
-    match.simulation_scoreboard(2)
-    match.simulation_scoreboard(2)
-
-match.simulation_scoreboard(1)
-match.simulation_scoreboard(1)
-print(match.to_dict())
