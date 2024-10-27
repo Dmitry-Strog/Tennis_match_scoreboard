@@ -3,7 +3,7 @@
 {% block title %}Завершенные матчи{% endblock %}
 
 {% block content %}
-<div class="container" xmlns="http://www.w3.org/1999/html">
+<div class="container">
     <div>
         <h1> Match Finished</h1>
     </div>
@@ -37,24 +37,26 @@
     {% endif %}
 
     <div class="page-container">
-        {% if page.has_previous_page() %}
-            <a class="button_page" href="?page={{ page.page_number - 1 }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">&lt;</a>
-        {% endif %}
-
-        {% for number_page in range(1, page.get_max_pages() + 1) %}
-            {% if number_page == 1 or number_page == page.get_max_pages() or (number_page >= page.page_number - 2 and number_page <= page.page_number + 2) %}
-                {% if page.page_number == number_page %}
-                    <a class="button_current_page" href="/matches?page={{ number_page }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">{{ number_page }}</a>
-                {% else %}
-                    <a class="button_page" href="/matches?page={{ number_page }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">{{ number_page }}</a>
-                {% endif %}
-            {% elif number_page == 2 or number_page == page.get_max_pages() - 1 %}
-                <span>..</span>
+        {% if page.get_max_pages() != 1 %}
+            {% if page.has_previous_page() %}
+                <a class="button_page" href="?page={{ page.page_number - 1 }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">&lt;</a>
             {% endif %}
-        {% endfor %}
 
-        {% if page.has_next_page() %}
-            <a class="button_page" href="?page={{ page.page_number + 1 }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">&gt;</a>
+            {% for number_page in range(1, page.get_max_pages() + 1) %}
+                {% if number_page == 1 or number_page == page.get_max_pages() or (number_page >= page.page_number - 2 and number_page <= page.page_number + 2) %}
+                    {% if page.page_number == number_page %}
+                        <a class="button_current_page" href="/matches?page={{ number_page }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">{{ number_page }}</a>
+                    {% else %}
+                        <a class="button_page" href="/matches?page={{ number_page }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">{{ number_page }}</a>
+                    {% endif %}
+                {% elif number_page == 2 or number_page == page.get_max_pages() - 1 %}
+                    <span>..</span>
+                {% endif %}
+            {% endfor %}
+
+            {% if page.has_next_page() %}
+                <a class="button_page" href="?page={{ page.page_number + 1 }}{% if filter_by_player_name %}&filter_by_player_name={{ filter_by_player_name }}{% endif %}">&gt;</a>
+            {% endif %}
         {% endif %}
     </div>
 </div>

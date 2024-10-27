@@ -3,13 +3,21 @@ from waitress import serve
 from src.handlers.finished_match_handler import FinishedMatchHandler
 from src.handlers.match_score_handler import MatchScoreHandler
 from src.handlers.new_match_handler import NewMatchHandler
+from src.templates.config_jinja import render_page
 
 
 class MainServer:
     def app(self, environ, start_response):
         request_uri = environ.get('PATH_INFO')
         request_method = environ.get('REQUEST_METHOD')
-        if request_uri == "/new-match":
+        if request_uri == "/":
+            status = "200 OK"
+            headers = [('Content-type', 'text/html; charset=utf-8')]
+            start_response(status, headers)
+            rendered_html = render_page("index.html")
+            return [rendered_html.encode('utf-8')]
+
+        elif request_uri == "/new-match":
             handler = NewMatchHandler()
 
             if request_method == 'GET':

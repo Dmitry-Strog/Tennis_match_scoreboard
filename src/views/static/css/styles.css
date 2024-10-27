@@ -143,6 +143,31 @@ input[type="text"]:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.button_score_matches {
+    width: 30%;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 15px;
+    border: none;
+    text-decoration: none;
+    background-color: #5fe3ff;
+    color: black;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button_score_matches:hover {
+    background-color: #3fc0e6;
+    transform: translateY(-2px);
+}
+
+.button_score_matches:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .finished-filter {
     flex: 3;
     margin-right: 10px;
@@ -218,7 +243,7 @@ input[type="text"]:focus {
 }
 
 .button_current_page:hover {
-    background-color: #3fc0e6;
+    background-color: #e96137;
     transform: translateY(-2px);
 }
 
@@ -229,4 +254,49 @@ input[type="text"]:focus {
 
 .button_current_page:visited {
     color: #000000;
+}
+
+.container_index {
+    margin: 150px auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+
+.index-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    gap: 20px;
+
+}
+
+.button_index {
+    width: 100%;
+    padding: 10px 25px;
+    font-size: 25px;
+    border: none;
+    text-decoration: none;
+    background-color: #5fe3ff;
+    color: black;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button_index:hover {
+    background-color: #3fc0e6;
+    transform: translateY(-2px);
+}
+
+.button_index:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+.text_game {
+    font-size: 40px;
 }

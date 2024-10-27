@@ -17,6 +17,7 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/base_handler.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/controller/handler_currency.py" afterDir="false" />
@@ -30,8 +31,15 @@
       <change afterPath="$PROJECT_DIR$/../Сurrency_exchange/service/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data_access_or_storage/match_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/match_scoreboard_logic/tennis_scoreboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/match-score.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/match-score.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/matches.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tennis_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tennis_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tennis_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tennis_set.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -75,9 +83,14 @@
     "Python tests.Python tests for test_main.test_main.executor": "Run",
     "Python tests.Python tests for test_tennis_game.TestTennisGame.executor": "Run",
     "Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state.executor": "Run",
-    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game.executor": "Debug",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_wins_game.executor": "Run",
+    "Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game.executor": "Run",
     "Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40.executor": "Run",
+    "Python tests.Python tests for test_tennis_set.TestTennisSet.executor": "Run",
     "Python tests.Python tests for test_tennis_set.TestTennisSet.test_set_winner.executor": "Run",
+    "Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_not_winner.executor": "Run",
+    "Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_state.executor": "Run",
+    "Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_winner.executor": "Run",
     "Python tests.Python tests in test_tennis_game.py.executor": "Debug",
     "Python.a.executor": "Run",
     "Python.config.executor": "Run",
@@ -123,7 +136,7 @@
       <recent name="$PROJECT_DIR$/src/views" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests for test_tennis_set.TestTennisSet">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
@@ -146,7 +159,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_tennis_game.TestTennisGame.test_deuce_state" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_tennis_set.TestTennisSet" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,11 +170,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame.test_deuce_state&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_set.TestTennisSet&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_tennis_set.TestTennisSet.test_tie_break_not_winner" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,11 +185,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame.test_player_wins_game&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_set.TestTennisSet.test_tie_break_not_winner&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_tennis_game.TestTennisGame.test_score_40_40" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_tennis_set.TestTennisSet.test_tie_break_state" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,11 +200,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tennis_game.TestTennisGame.test_score_40_40&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_set.TestTennisSet.test_tie_break_state&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_tennis_set.TestTennisSet.test_set_winner" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_tennis_set.TestTennisSet.test_tie_break_winner" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Tennis_match_scoreboard" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,24 +215,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tennis_set.TestTennisSet.test_set_winner&quot;" />
+      <option name="_new_target" value="&quot;test_tennis_set.TestTennisSet.test_tie_break_winner&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state" />
-      <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" />
-      <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40" />
-      <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_set_winner" />
+      <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet" />
+      <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_not_winner" />
+      <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_state" />
+      <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_winner" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_set_winner" />
-        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_deuce_state" />
-        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_player_wins_game" />
-        <item itemvalue="Python tests.Python tests for test_tennis_game.TestTennisGame.test_score_40_40" />
+        <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_not_winner" />
+        <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_winner" />
+        <item itemvalue="Python tests.Python tests for test_tennis_set.TestTennisSet.test_tie_break_state" />
       </list>
     </recent_temporary>
   </component>

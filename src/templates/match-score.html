@@ -56,5 +56,10 @@
                 {% endif %}
             </div>
         </div>
+        {% if winner %}
+        <div class="finish-container">
+            <a class="button_score_matches" href="matches?filter_by_player_name={{ winner }}">Завершенные матчи</a>
+        </div>
+        {% endif %}
 </div>
 {% endblock %}
