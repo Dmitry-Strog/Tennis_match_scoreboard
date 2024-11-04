@@ -3,26 +3,26 @@
 {% block title %}Новый матч{% endblock %}
 
 {% block content %}
-        <div class="container_new_match">
-            <form action="/new-match" method="POST">
-                <div class="players">
-                    <div class="player">Игрок 1:</div>
-                </div>
-                <div class="inputs">
-                    <input type="text" name="player1" maxlength="12" placeholder="Введите имя игрока 1" required>
-                </div>
-                <div class="players">
-                    <div class="player">Игрок 2:</div>
-                </div>
-                <div class="inputs">
-                    <input type="text" name="player2" maxlength="12" placeholder="Введите имя игрока 2" required>
-                </div>
-                <div class="container-button">
-                    <div class="">
-                        <button class="button_new_match" type="submit" >Начать игру</button>
-                    </div>
-
-                </div>
-            </form>
+<div class="container_new_match">
+    <form action="/new-match" method="POST">
+        <div class="players">
+            <div class="player">Игрок 1:</div>
         </div>
+        <div class="inputs">
+            <input type="text" name="player1" maxlength="12" placeholder="Введите имя игрока 1" required>
+        </div>
+        <div class="players">
+            <div class="player">Игрок 2:</div>
+        </div>
+        <div class="inputs">
+            <input type="text" name="player2" maxlength="12" placeholder="Введите имя игрока 2" required>
+        </div>
+        <div class="container-button">
+            <div class="">
+                <button class="button_new_match" type="submit" >Начать игру</button>
+            </div>
+
+        </div>
+    </form>
+</div>
 {% endblock %}

@@ -1,5 +1,4 @@
 from urllib.parse import parse_qs
-
 from src.service.data_access_or_storage.match_data import MatchData
 from src.service.new_match_service import NewMatchService
 from src.templates.config_jinja import render_page
@@ -9,7 +8,8 @@ class NewMatchHandler:
     def __init__(self):
         self.__service = NewMatchService()
 
-    def request_get(self, start_response):
+    @classmethod
+    def request_get(cls, environ, start_response):
         status = "200 OK"
         headers = [('Content-type', 'text/html; charset=utf-8')]
         start_response(status, headers)
@@ -28,8 +28,9 @@ class NewMatchHandler:
         start_response(status, headers)
         return [b'Redirecting...']
 
-    def parse_url(self, post_data):
+    @staticmethod
+    def parse_url(post_data):
         data = parse_qs(post_data)
-        player1 = data["player1"]
-        player2 = data["player2"]
+        player1 = data["player1"][0]
+        player2 = data["player2"][0]
         return player1, player2
