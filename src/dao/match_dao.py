@@ -1,6 +1,7 @@
 from sqlalchemy import or_
 from sqlalchemy.orm import joinedload
 
+from src.exceptions import MatchNotFoundException
 from src.models import MatchesModel, sessions
 
 
@@ -19,7 +20,10 @@ class MatchDao:
                 joinedload(MatchesModel.player2_rel),
                 joinedload(MatchesModel.winner_rel),
             ).filter_by(UUID=str(match_uuid)).first()
+            if match is None:
+                raise MatchNotFoundException
             return match
+
 
     def get_finished_matches(self, name=None):
         with sessions() as session:

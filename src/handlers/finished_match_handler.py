@@ -24,7 +24,10 @@ class FinishedMatchHandler:
             filter_by_player_name = parsed_data['filter_by_player_name']
 
         if parsed_data.get('page', False):
-            number_page = int(parsed_data['page'])
+            try:
+                number_page = int(parsed_data['page'])
+            except ValueError:
+                number_page = 1
 
         match_list = self.__service.get_finished_match(filter_by_player_name)
         pagination = Pagination(match_list, number_page)

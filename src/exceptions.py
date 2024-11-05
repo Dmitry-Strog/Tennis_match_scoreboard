@@ -19,3 +19,8 @@ class DuplicatePlayerError(TennisError):
 class PlayerNameFormatError(TennisError):
     def __init__(self):
         self.message = f"Недопустимый формат имени игрока"
+
+
+class MatchNotFoundException(TennisError):
+    def __init__(self):
+        self.message = f"Матч с указанным UUID отсутствует"
