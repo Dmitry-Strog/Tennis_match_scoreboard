@@ -13,9 +13,9 @@ class TennisMatch:
         self.__player2_object.match_score += 1
 
     def check_match_win(self, winner_player: PlayerScoreTennis, loser_player: PlayerScoreTennis):
-        if winner_player.match_score >= 2 and (winner_player.match_score - loser_player.match_score) == 2:
+        if winner_player.match_score >= 2 and (winner_player.match_score - loser_player.match_score) == 1:
             return True
-        elif winner_player.match_score >= 3 and loser_player.match_score < 3:
+        elif winner_player.match_score >= 2 and loser_player.match_score < 1:
             return True
 
     def get_winner(self, winner_player: PlayerScoreTennis, loser_player: PlayerScoreTennis):

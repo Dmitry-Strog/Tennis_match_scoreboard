@@ -1,4 +1,7 @@
+import re
 from urllib.parse import parse_qs
+
+from src.exceptions import DuplicatePlayerError, PlayerNameFormatError
 from src.service.data_access_or_storage.match_data import MatchData
 from src.service.new_match_service import NewMatchService
 from src.templates.config_jinja import render_page
@@ -19,7 +22,13 @@ class NewMatchHandler:
     def request_post(self, environ, start_response):
         content_length = int(environ.get('CONTENT_LENGTH', 0))
         post_data = environ['wsgi.input'].read(content_length).decode('utf-8')
+
         player1_name, player2_name = self.parse_url(post_data)
+
+        if player1_name == player2_name:
+            raise DuplicatePlayerError
+        if self.validate_player_name(player1_name) is False or self.validate_player_name(player2_name) is False:
+            raise PlayerNameFormatError
 
         match_data: MatchData = self.__service.start_match(player1_name, player2_name)
         uuid = match_data.uuid
@@ -34,3 +43,12 @@ class NewMatchHandler:
         player1 = data["player1"][0]
         player2 = data["player2"][0]
         return player1, player2
+
+    @staticmethod
+    def validate_player_name(player_name):
+        player_name = player_name.strip()
+        pattern = r'^[a-zA-Z0-9_\-\. ]+$'
+        if re.match(pattern, player_name):
+            return True
+        else:
+            return False

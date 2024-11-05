@@ -1,6 +1,4 @@
-import uuid
-
-from sqlalchemy import update, and_
+from sqlalchemy import or_
 from sqlalchemy.orm import joinedload
 
 from src.models import MatchesModel, sessions
@@ -32,8 +30,12 @@ class MatchDao:
             ).filter(MatchesModel.winner != None)
 
             if name:
-                matches = matches.filter(MatchesModel.winner_rel.has(NAME=name))
-
+                matches = matches.filter(
+                    or_(
+                        MatchesModel.player1_rel.has(NAME=name),
+                        MatchesModel.player2_rel.has(NAME=name)
+                    )
+                )
             return matches.all()
 
     def update_match(self, uuid_match, score_json, winner_id=None):

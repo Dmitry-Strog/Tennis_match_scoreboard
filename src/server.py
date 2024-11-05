@@ -1,4 +1,4 @@
-from src.exceptions import NotFoundHandler
+from src.exceptions import NotFoundError
 from src.handlers.exception_handler import ExceptionHandler
 from src.handlers.finished_match_handler import FinishedMatchHandler
 from src.handlers.index_handler import IndexHandler
@@ -21,7 +21,7 @@ class MainServer:
         try:
             handler = urls.get(request_uri)
             if handler is None:
-                raise NotFoundHandler
+                raise NotFoundError
 
             if request_method == 'GET':
                 return handler.request_get(environ, start_response)
