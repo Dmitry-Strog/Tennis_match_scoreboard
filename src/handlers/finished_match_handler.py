@@ -1,12 +1,13 @@
 from urllib.parse import parse_qs
-from src.service.data_access_or_storage.match_service import MatchService
+
+from src.dao.match_dao import MatchDao
 from src.service.pagination import Pagination
 from src.templates.config_jinja import render_page
 
 
 class FinishedMatchHandler:
     def __init__(self):
-        self.__service = MatchService()
+        self.__dao = MatchDao()
 
     @classmethod
     def parse_url(cls, post_data):
@@ -29,7 +30,7 @@ class FinishedMatchHandler:
             except ValueError:
                 number_page = 1
 
-        match_list = self.__service.get_finished_match(filter_by_player_name)
+        match_list = self.__dao.get_finished_match(filter_by_player_name)
         pagination = Pagination(match_list, number_page)
 
         context = {

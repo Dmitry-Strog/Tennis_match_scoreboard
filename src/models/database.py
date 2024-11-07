@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from src.models.config import settings
 
 # создания движка sqlalchemy для работы с БД
-engine = create_engine(url=settings.DATABASE_URL_psycorg, echo=False)
+engine = create_engine(url=settings.DATABASE_URL, echo=False)
 # создаем сессию
 sessions = sessionmaker(bind=engine)
 

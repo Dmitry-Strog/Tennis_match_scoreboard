@@ -1,3 +1,5 @@
+import json
+
 from sqlalchemy import or_
 from sqlalchemy.orm import joinedload
 
@@ -24,7 +26,6 @@ class MatchDao:
                 raise MatchNotFoundException
             return match
 
-
     def get_finished_matches(self, name=None):
         with sessions() as session:
             matches = session.query(MatchesModel).options(
@@ -49,3 +50,18 @@ class MatchDao:
             if winner_id is not None:
                 match.winner = winner_id
             session.commit()
+
+    def get_finished_match(self, name=None):
+        finished_matches = []
+        matches = self.get_finished_matches(name)
+
+        for match in matches:
+            match_info = {
+                "player1": match.player1_rel.NAME if match.player1_rel else "None",
+                "player2": match.player2_rel.NAME if match.player2_rel else "None",
+                "score": json.loads(match.score),
+                "winner": match.winner_rel.NAME if match.winner_rel else "None",
+            }
+            finished_matches.append(match_info)
+
+        return finished_matches

@@ -32,3 +32,5 @@ class MainServer:
             environ['exception'] = e
             handler = urls.get('/exception')
             return handler.request_get(environ, start_response)
+
+    # Добавить метод который будет проверят какой клас на вход и будем отдавать зависомсть
