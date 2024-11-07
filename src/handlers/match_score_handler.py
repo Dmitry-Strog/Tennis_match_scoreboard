@@ -1,13 +1,13 @@
 from urllib.parse import parse_qs
 
-from src.service.data_access_or_storage.match_data import MatchData
-from src.service.match_score_service import MatchScoreService
+from src.match_data import MatchData
+from src.service.interface.match_score_service import MatchScoreService
 from src.templates.config_jinja import render_page
 
 
 class MatchScoreHandler:
-    def __init__(self):
-        self.__service = MatchScoreService()
+    def __init__(self, service: MatchScoreService):
+        self.__service = service
 
     def request_get(self, environ, start_response):
         status = "200 OK"

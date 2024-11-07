@@ -1,13 +1,14 @@
+import json
 from urllib.parse import parse_qs
 
-from src.dao.match_dao import MatchDao
-from src.service.pagination import Pagination
+from src.repository.interface.match_repository import MatchRepository
+from src.utils.pagination import Pagination
 from src.templates.config_jinja import render_page
 
 
 class FinishedMatchHandler:
-    def __init__(self):
-        self.__dao = MatchDao()
+    def __init__(self, match_repo: MatchRepository):
+        self.__match = match_repo
 
     @classmethod
     def parse_url(cls, post_data):
@@ -30,7 +31,7 @@ class FinishedMatchHandler:
             except ValueError:
                 number_page = 1
 
-        match_list = self.__dao.get_finished_match(filter_by_player_name)
+        match_list = self.__get_finished_match(filter_by_player_name)
         pagination = Pagination(match_list, number_page)
 
         context = {
@@ -45,3 +46,18 @@ class FinishedMatchHandler:
         rendered_html = render_page("matches.html", context)
 
         return [rendered_html.encode('utf-8')]
+
+    def __get_finished_match(self, name=None):
+        finished_matches = []
+        matches = self.__match.get_finished_matches(name)
+
+        for match in matches:
+            match_info = {
+                "player1": match.player1_rel.NAME if match.player1_rel else "None",
+                "player2": match.player2_rel.NAME if match.player2_rel else "None",
+                "score": json.loads(match.score),
+                "winner": match.winner_rel.NAME if match.winner_rel else "None",
+            }
+            finished_matches.append(match_info)
+
+        return finished_matches

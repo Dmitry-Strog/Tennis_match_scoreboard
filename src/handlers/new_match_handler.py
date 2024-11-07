@@ -2,14 +2,14 @@ import re
 from urllib.parse import parse_qs
 
 from src.exceptions import DuplicatePlayerError, PlayerNameFormatError
-from src.service.data_access_or_storage.match_data import MatchData
-from src.service.new_match_service import NewMatchService
+from src.match_data import MatchData
+from src.service.interface.new_match_service import NewMatchService
 from src.templates.config_jinja import render_page
 
 
 class NewMatchHandler:
-    def __init__(self):
-        self.__service = NewMatchService()
+    def __init__(self, service: NewMatchService):
+        self.__service = service
 
     @classmethod
     def request_get(cls, environ, start_response):
@@ -27,6 +27,7 @@ class NewMatchHandler:
 
         if player1_name == player2_name:
             raise DuplicatePlayerError
+
         if self.validate_player_name(player1_name) is False or self.validate_player_name(player2_name) is False:
             raise PlayerNameFormatError
 
@@ -38,7 +39,7 @@ class NewMatchHandler:
         return [b'Redirecting...']
 
     @staticmethod
-    def parse_url(post_data):
+    def parse_url(post_data) -> tuple:
         data = parse_qs(post_data)
         player1 = data["player1"][0]
         player2 = data["player2"][0]

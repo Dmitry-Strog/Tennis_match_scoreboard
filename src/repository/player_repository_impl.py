@@ -1,9 +1,10 @@
 from sqlalchemy import select
 
 from src.models import PlayersModel, sessions
+from src.repository.interface.player_repository import PlayerRepository
 
 
-class PlayerDao:
+class PlayerRepositoryImpl(PlayerRepository):
     def get_player(self, name: str):
         """ Получение игрока из БД"""
         with sessions() as session:

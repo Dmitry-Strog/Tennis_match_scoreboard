@@ -1,13 +1,12 @@
-import json
-
 from sqlalchemy import or_
 from sqlalchemy.orm import joinedload
 
 from src.exceptions import MatchNotFoundException
 from src.models import MatchesModel, sessions
+from src.repository.interface.match_repository import MatchRepository
 
 
-class MatchDao:
+class MatchRepositoryImpl(MatchRepository):
     def insert_table_matches(self, player1: int, player2: int):
         match = MatchesModel(player1=player1, player2=player2)
         with sessions() as session:
@@ -51,17 +50,3 @@ class MatchDao:
                 match.winner = winner_id
             session.commit()
 
-    def get_finished_match(self, name=None):
-        finished_matches = []
-        matches = self.get_finished_matches(name)
-
-        for match in matches:
-            match_info = {
-                "player1": match.player1_rel.NAME if match.player1_rel else "None",
-                "player2": match.player2_rel.NAME if match.player2_rel else "None",
-                "score": json.loads(match.score),
-                "winner": match.winner_rel.NAME if match.winner_rel else "None",
-            }
-            finished_matches.append(match_info)
-
-        return finished_matches
