@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from src.match_data import MatchData
+from src.dto import MatchDTO
 
 
 class MatchScoreService(ABC):
     @abstractmethod
-    def play_match(self, uuid: str, point: int = None) -> MatchData:
+    def play_match(self, uuid: str, point: int = None) -> MatchDTO:
         pass

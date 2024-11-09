@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from src.match_data import MatchData
+from src.dto import MatchDTO, PlayersDTO
 
 
 class NewMatchService(ABC):
     @abstractmethod
-    def start_match(self, name_player1: str, name_player2: str) -> MatchData:
+    def start_match(self, players: PlayersDTO) -> MatchDTO:
         pass

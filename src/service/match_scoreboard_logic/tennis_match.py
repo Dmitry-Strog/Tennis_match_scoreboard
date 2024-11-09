@@ -2,6 +2,8 @@ from src.service.match_scoreboard_logic.player_score_tennis import PlayerScoreTe
 
 
 class TennisMatch:
+    MATCH_WIN_THRESHOLD = 2
+
     def __init__(self, player1_object: PlayerScoreTennis, player2_object: PlayerScoreTennis):
         self.__player1_object = player1_object
         self.__player2_object = player2_object
@@ -13,9 +15,10 @@ class TennisMatch:
         self.__player2_object.match_score += 1
 
     def check_match_win(self, winner_player: PlayerScoreTennis, loser_player: PlayerScoreTennis):
-        if winner_player.match_score >= 2 and (winner_player.match_score - loser_player.match_score) == 1:
+        if (winner_player.match_score >= self.MATCH_WIN_THRESHOLD and
+                (winner_player.match_score - loser_player.match_score) == 1):
             return True
-        elif winner_player.match_score >= 2 and loser_player.match_score < 1:
+        elif winner_player.match_score >= self.MATCH_WIN_THRESHOLD and loser_player.match_score < 1:
             return True
 
     def get_winner(self, winner_player: PlayerScoreTennis, loser_player: PlayerScoreTennis):

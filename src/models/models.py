@@ -16,8 +16,6 @@ class PlayersModel(Base):
     ID: Mapped[int_pk]
     NAME: Mapped[str_50] = mapped_column(nullable=False, unique=True, index=True)
 
-    # matches: Mapped[list["MatchesModel"]] = relationship(back_populates="player")
-
     def __repr__(self):
         return f"PlayersModel{self.ID}:{self.NAME}"
 

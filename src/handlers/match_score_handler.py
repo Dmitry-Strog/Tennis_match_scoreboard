@@ -1,6 +1,6 @@
 from urllib.parse import parse_qs
 
-from src.match_data import MatchData
+from src.dto import MatchDTO
 from src.service.interface.match_score_service import MatchScoreService
 from src.templates.config_jinja import render_page
 
@@ -13,7 +13,7 @@ class MatchScoreHandler:
         status = "200 OK"
         headers = [('Content-type', 'text/html; charset=utf-8')]
         uuid = parse_qs(environ['QUERY_STRING'])["uuid"][0]
-        match: MatchData = self.__service.play_match(uuid)
+        match: MatchDTO = self.__service.play_match(uuid)
         player1, player2 = match.score.keys()
         start_response(status, headers)
 
@@ -35,7 +35,7 @@ class MatchScoreHandler:
         status = '200 OK'
         headers = [('Content-type', 'text/html; charset=utf-8')]
 
-        match: MatchData = self.__service.play_match(uuid, point)
+        match: MatchDTO = self.__service.play_match(uuid, point)
         player1, player2 = match.score.keys()
         start_response(status, headers)
 

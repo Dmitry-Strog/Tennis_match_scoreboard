@@ -1,6 +1,7 @@
 from sqlalchemy import or_
 from sqlalchemy.orm import joinedload
 
+from src.dto import MatchDTO
 from src.exceptions import MatchNotFoundException
 from src.models import MatchesModel, sessions
 from src.repository.interface.match_repository import MatchRepository
@@ -42,11 +43,12 @@ class MatchRepositoryImpl(MatchRepository):
                 )
             return matches.all()
 
-    def update_match(self, uuid_match, score_json, winner_id=None):
+    def update_match(self, match: MatchDTO):
         with sessions() as session:
-            match: MatchesModel = session.query(MatchesModel).filter(MatchesModel.UUID == uuid_match).one_or_none()
-            match.score = score_json
-            if winner_id is not None:
-                match.winner = winner_id
+            current_match: MatchesModel = session.query(
+                MatchesModel).filter(MatchesModel.UUID == match.uuid).one_or_none()
+            current_match.score = match.score
+            if match.winner is not None:
+                current_match.winner = match.winner
             session.commit()
 

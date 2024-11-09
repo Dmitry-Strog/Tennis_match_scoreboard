@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+from src.dto import MatchDTO
 from src.models import MatchesModel
 
 
@@ -17,5 +18,5 @@ class MatchRepository(ABC):
         pass
 
     @abstractmethod
-    def update_match(self, uuid_match, score_json, winner_id=None) -> None:
+    def update_match(self, match: MatchDTO) -> None:
         pass

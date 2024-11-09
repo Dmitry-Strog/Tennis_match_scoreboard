@@ -2,6 +2,7 @@ from src.service.match_scoreboard_logic.player_score_tennis import PlayerScoreTe
 
 
 class TennisSet:
+    SET_WIN_THRESHOLD = 6
 
     def __init__(self, player1_object: PlayerScoreTennis, player2_object: PlayerScoreTennis):
         self.__player1_object = player1_object
@@ -15,13 +16,14 @@ class TennisSet:
 
     def check_set_win(self, winner_player: PlayerScoreTennis, loser_player: PlayerScoreTennis):
 
-        if winner_player.set_score >= 6 and (winner_player.set_score - loser_player.set_score) == 2:
+        if (winner_player.set_score >= self.SET_WIN_THRESHOLD and
+                (winner_player.set_score - loser_player.set_score) == 2):
             return True
-        elif winner_player.set_score >= 6 and loser_player.set_score < 5:
+        elif winner_player.set_score >= self.SET_WIN_THRESHOLD and loser_player.set_score < 5:
             return True
 
     def is_tie_break(self, winner_player: PlayerScoreTennis, loser_player: PlayerScoreTennis):
-        if winner_player.set_score == 6 and loser_player.set_score == 6:
+        if winner_player.set_score == self.SET_WIN_THRESHOLD and loser_player.set_score == self.SET_WIN_THRESHOLD:
             return True
 
     def reset_points(self):

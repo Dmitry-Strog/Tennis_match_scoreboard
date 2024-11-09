@@ -2,7 +2,7 @@ import re
 from urllib.parse import parse_qs
 
 from src.exceptions import DuplicatePlayerError, PlayerNameFormatError
-from src.match_data import MatchData
+from src.dto import MatchDTO, PlayersDTO
 from src.service.interface.new_match_service import NewMatchService
 from src.templates.config_jinja import render_page
 
@@ -23,16 +23,16 @@ class NewMatchHandler:
         content_length = int(environ.get('CONTENT_LENGTH', 0))
         post_data = environ['wsgi.input'].read(content_length).decode('utf-8')
 
-        player1_name, player2_name = self.parse_url(post_data)
+        player_name_1, player_name_2 = self.parse_url(post_data)
 
-        if player1_name == player2_name:
+        if player_name_1 == player_name_2:
             raise DuplicatePlayerError
 
-        if self.validate_player_name(player1_name) is False or self.validate_player_name(player2_name) is False:
+        if self.validate_player_name(player_name_1) is False or self.validate_player_name(player_name_2) is False:
             raise PlayerNameFormatError
 
-        match_data: MatchData = self.__service.start_match(player1_name, player2_name)
-        uuid = match_data.uuid
+        match_dto: MatchDTO = self.__service.start_match(PlayersDTO(player_name_1, player_name_2))
+        uuid = match_dto.uuid
         status = '303 See Other'
         headers = [('Location', f'/match-score?uuid={uuid}')]
         start_response(status, headers)
