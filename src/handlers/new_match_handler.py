@@ -48,7 +48,7 @@ class NewMatchHandler:
     @staticmethod
     def validate_player_name(player_name):
         player_name = player_name.strip()
-        pattern = r'^[a-zA-Z0-9_\-\. ]+$'
+        pattern = r'^[a-zA-Zа-яА-Я0-9_\-\. ]+$'
         if re.match(pattern, player_name):
             return True
         else:
